@@ -8,18 +8,41 @@
   </head>
   <body>
     <iframe
-      class="full-size"
       id="content-frame"
       allowfullscreen
       frameborder="0"></iframe>
+    <video autoplay muted loop id="video-holder">
+      <source src="" type="video/mp4">
+    </video>
+    <div
+      id="pic-holder">
+    </div>
 
     <script language="javascript">
         var MINUTE = 60000;
         var addresses = [
+          // Example Video
+          // {
+          //   url: 'https://github.com/mediaelement/mediaelement-files/blob/master/big_buck_bunny.mp4?raw=true',
+          //   timeToDisplay: 0.2 * MINUTE,
+          //   type: 'video'
+          // },
+          {
+            url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data.png',
+            timeToDisplay: 0.2 * MINUTE,
+            type: 'image'
+          },
+          {
+            url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lighthouse-artifact-gif',
+            timeToDisplay: 0.2 * MINUTE,
+            type: 'image'
+          },
           {
             url: 'https://uchicago-vis-pl-lab.github.io/default-screen-saver/',
-            timeToDisplay: 10 * MINUTE
-          }
+            timeToDisplay: 1 * MINUTE,
+            type: 'webpage'
+          },
+
         ];
 
         setTimeout(function () {
@@ -29,8 +52,32 @@
         var idx = 0;
         function setPage() {
           var nextAddress = addresses[idx];
+          // preemptively deactivate everything
           var frame = document.getElementById('content-frame');
-          frame.setAttribute('src', nextAddress.url);
+          var picHolder = document.getElementById('pic-holder');
+          var videoHolder = document.getElementById('video-holder');
+          frame.setAttribute('src', '');
+          videoHolder.setAttribute('src', '');
+          frame.setAttribute('class', 'hide-holder');
+          picHolder.setAttribute('class', 'hide-holder');
+          videoHolder.setAttribute('class', 'hide-holder');
+
+
+          switch (nextAddress.type) {
+          case 'image':
+            picHolder.setAttribute('class', 'show-holder');
+            picHolder.setAttribute('style', 'background-image:url(' + nextAddress.url + ')');
+            break;
+          case 'webpage':
+            frame.setAttribute('class', 'show-holder');
+            frame.setAttribute('src', nextAddress.url);
+            break;
+          case 'video':
+            videoHolder.setAttribute('class', 'show-holder');
+            videoHolder.setAttribute('src', nextAddress.url);
+            break;
+          }
+
           setTimeout(function() {
             idx = (idx + 1) % addresses.length;
             setPage();

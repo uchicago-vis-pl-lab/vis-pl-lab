@@ -9,8 +9,25 @@ body {
   width: 100%;
 }
 
-.main-container {
-  background-image: url('https://github.com/mcnuttandrew/mcnuttandrew.github.io/raw/master/assets/checkerboard.gif');
+iframe,
+#pic-holder,
+#video-holder {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.5s;
+}
+
+#pic-holder {
+  background-size: 100% 100%;
+}
+
+.hide-holder {
+  opacity: 0
+}
+
+.show-holder {
+  opacity: 1
 }
 
 .label-container {
