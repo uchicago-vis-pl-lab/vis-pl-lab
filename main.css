@@ -4,6 +4,18 @@ body {
   color: white;
   font-family: 'Roboto', sans-serif;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.main-container {
+  background-image: url('https://github.com/mcnuttandrew/mcnuttandrew.github.io/raw/master/assets/checkerboard.gif');
+}
+
+.label-container {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 30px;
   width: 100%;
 }
 
