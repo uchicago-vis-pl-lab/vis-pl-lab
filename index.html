@@ -5,15 +5,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
-    <div class="flex center full-size main-container">
-      <div class="flex-down center label-container">
-        <h1>VIS/PL LAB</h1>
-        <h3>MORE DETAILS TO COME</h3>
-        <h5>JCL 291</h5>
-      </div>
-    </div>
+    <iframe
+      class="full-size"
+      id="content-frame"
+      allowfullscreen
+      frameborder="0"></iframe>
+
+    <script language="javascript">
+        var MINUTE = 60000;
+        var addresses = [
+          {
+            url: 'https://uchicago-vis-pl-lab.github.io/default-screen-saver/',
+            timeToDisplay: 10 * MINUTE
+          }
+        ];
+
+        setTimeout(function () {
+          window.location.reload(true);
+        }, 10 * MINUTE);
+
+        var idx = 0;
+        function setPage() {
+          var nextAddress = addresses[idx];
+          var frame = document.getElementById('content-frame');
+          frame.setAttribute('src', nextAddress.url);
+          setTimeout(function() {
+            idx = (idx + 1) % addresses.length;
+            setPage();
+          }, nextAddress.timeToDisplay);
+        }
+        setPage();
+    </script>
   </body>
 </html>
