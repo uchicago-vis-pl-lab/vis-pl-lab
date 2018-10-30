@@ -1,0 +1,27 @@
+html,
+body {
+  background: black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+.full-size {
+  height: 100%;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-down {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
