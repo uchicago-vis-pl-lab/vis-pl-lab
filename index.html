@@ -28,9 +28,9 @@
           //   type: 'video'
           // },
           {
-            url: 'https://i.giphy.com/media/l3vRfhFD8hJCiP0uQ/giphy.webp',
+            url: 'https://maps.darksky.net/@temperature,41.574,-87.832,7',
             timeToDisplay: 0.3 * MINUTE,
-            type: 'image'
+            type: 'page'
           },
           {
             url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data.png',
@@ -45,7 +45,7 @@
           {
             url: 'https://uchicago-vis-pl-lab.github.io/default-screen-saver/',
             timeToDisplay: 1 * MINUTE,
-            type: 'webpage'
+            type: 'page'
           },
 
         ];
@@ -67,13 +67,12 @@
           picHolder.setAttribute('class', 'hide-holder');
           videoHolder.setAttribute('class', 'hide-holder');
 
-
           switch (nextAddress.type) {
           case 'image':
             picHolder.setAttribute('class', 'show-holder');
             picHolder.setAttribute('style', 'background-image:url(' + nextAddress.url + ')');
             break;
-          case 'webpage':
+          case 'page':
             frame.setAttribute('class', 'show-holder');
             frame.setAttribute('src', nextAddress.url);
             break;
