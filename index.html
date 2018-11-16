@@ -47,12 +47,21 @@
             timeToDisplay: 1 * MINUTE,
             type: 'page'
           },
-
+          {
+            url: 'https://uchicago-cs.github.io/plrg/',
+            timeToDisplay: 1 * MINUTE,
+            type: 'page'
+          },
+          {
+            url: 'http://people.cs.uchicago.edu/~brianhempel/SVG%20Programming%20By%20Direct%20Manipulation%20of%20Intermediates%20De-anonymized%2048mb.mp4',
+            timeToDisplay: 20 * MINUTE,
+            type: 'video'
+          },
         ];
 
         setTimeout(function () {
           window.location.reload(true);
-        }, 10 * MINUTE);
+        }, 100 * MINUTE);
 
         var idx = 0;
         function setPage() {
