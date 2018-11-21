@@ -1,0 +1,13 @@
+{
+  "name": "vis-pl-lab-tv",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./"
+  },
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-config-uber-es2015": "^3.0.1"
+  }
+}

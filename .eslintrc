@@ -1,0 +1,17 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": [
+    "uber-es2015"
+  ],
+  "rules": {
+    "consistent-return": 0,
+    "max-params": ["error", 6],
+    "object-curly-spacing": 0,
+    "no-implicit-coercion": 0,
+    "comma-dangle": 0,
+    "max-len": 0
+  }
+}
