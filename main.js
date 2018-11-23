@@ -12,88 +12,87 @@ const addresses = [
   //   timeToDisplay: 0.3 * MINUTE,
   //   type: 'page'
   // },
-  // {
-  //   url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data.png',
-  //   timeToDisplay: 0.2 * MINUTE,
-  //   type: 'image'
-  // },
-  // {
-  //   url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lighthouse-artifact.gif',
-  //   timeToDisplay: 0.2 * MINUTE,
-  //   type: 'image'
-  // },
+  {
+    url: 'https://media0.giphy.com/media/E8wm3nfbNWBdC/giphy.gif?cid=3640f6095bf83d18503555496f65f413',
+    timeToDisplay: 5.0 * MINUTE,
+    type: 'image'
+  },
+  {
+    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data.png',
+    timeToDisplay: 0.2 * MINUTE,
+    type: 'image'
+  },
+  {
+    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lighthouse-artifact.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+  {
+    url: 'https://media2.giphy.com/media/l3vR980psm941tsQg/giphy.gif?cid=3640f6095bf83e2c786f4161777774c5',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
   {
     url: 'https://uchicago-vis-pl-lab.github.io/default-screen-saver/',
     timeToDisplay: 0.5 * MINUTE,
     type: 'page'
   },
-  // {
-  //   url: 'https://uchicago-cs.github.io/plrg/',
-  //   timeToDisplay: 1 * MINUTE,
-  //   type: 'page'
-  // },
+  {
+    url: 'https://uchicago-cs.github.io/plrg/',
+    timeToDisplay: 1 * MINUTE,
+    type: 'page'
+  },
   // {
   //   url: 'http://people.cs.uchicago.edu/~brianhempel/SVG%20Programming%20By%20Direct%20Manipulation%20of%20Intermediates%20De-anonymized%2048mb.mp4',
   //   timeToDisplay: 20 * MINUTE,
   //   type: 'video'
   // },
-
   {
-    url: 'https://media.giphy.com/media/AxVvk1STKwGGGOU0GQ/giphy.gif',
+    url: 'https://media1.giphy.com/media/t45sGfSonLg7m/giphy.gif?cid=3640f6095bf83d36506e786d6b8f9c28',
     timeToDisplay: 0.5 * MINUTE,
     type: 'image'
-  },
-  {
-    url: 'https://66.media.tumblr.com/f442c59ed011a67761d0feb3044a33da/tumblr_nf7rahcJvm1ru5h8co1_500.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  {
-    url: 'https://media.giphy.com/media/3oriNOxhZpQB1511eM/giphy.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  }
 ];
 
-const pagesToCheck = [
+const pagesToCheckBase = [
   'index.html',
   'main.css',
   'main.js'
 ];
 const checkIntervalSeconds = 30;
-
-lastVersion = "";
-
+let lastVersion = '';
 function refreshIfNeeded() {
-  var thisVersion = new Blob();
+  let thisVersion = new Blob();
 
-  var checkPages = function(pagesToCheck) {
-    var pageToCheck = pagesToCheck[0]; // head element
-    pagesToCheck = pagesToCheck.slice(1); // rest of list
+  function checkPages(pagesToCheck) {
+    // head element
+    const pageToCheck = pagesToCheck[0];
+    // rest of list
+    pagesToCheck = pagesToCheck.slice(1);
 
-    fetch(pageToCheck).then(function(response) {
-      if (response.ok) { return response.text(); }
-    }).then(function(pageText) {
+    fetch(pageToCheck).then(response => {
+      if (response.ok) {
+        return response.text();
+      }
+    }).then(pageText => {
       thisVersion += pageText;
       if (pagesToCheck.length > 0) {
         checkPages(pagesToCheck);
       } else {
-        // console.log(thisVersion);
-        if (window.lastVersion.length == 0) {
-          window.lastVersion = thisVersion;
-        } else if (window.lastVersion !== thisVersion) {
-          // console.log(window.lastVersion);
-          // console.log(thisVersion);
-          window.location.reload(true);
+        if (lastVersion.length === 0) {
+          lastVersion = thisVersion;
+        } else if (lastVersion !== thisVersion) {
+          location.reload(true);
         }
-        window.setTimeout(refreshIfNeeded, checkIntervalSeconds * SECOND);
+        setTimeout(refreshIfNeeded, checkIntervalSeconds * SECOND);
       }
-    })
+    });
   }
 
-  checkPages(pagesToCheck);
+  checkPages(pagesToCheckBase);
 }
-refreshIfNeeded(); // Load up the initial version to compare against.
+// Load up the initial version to compare against.
+refreshIfNeeded();
 
 let idx = 0;
 function setPage() {
