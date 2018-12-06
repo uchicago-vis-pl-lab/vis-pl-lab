@@ -28,11 +28,6 @@ const addresses = [
     type: 'image'
   },
   {
-    url: 'https://people.cs.uchicago.edu/~brianhempel/meme_advertisement_for_tv.jpg',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  {
     url: 'https://media2.giphy.com/media/l3vR980psm941tsQg/giphy.gif?cid=3640f6095bf83e2c786f4161777774c5',
     timeToDisplay: 0.5 * MINUTE,
     type: 'image'
