@@ -13,6 +13,11 @@ const addresses = [
   //   type: 'page'
   // },
   {
+    url: 'https://media3.giphy.com/media/d3mn0IJEfZ58EotW/giphy.gif?cid=3640f6095c6220dc6d68493045d5e8fe',
+    timeToDisplay: 0.2 * MINUTE,
+    type: 'image'
+  },
+  {
     url: 'https://media0.giphy.com/media/E8wm3nfbNWBdC/giphy.gif?cid=3640f6095bf83d18503555496f65f413',
     timeToDisplay: 5.0 * MINUTE,
     type: 'image'
