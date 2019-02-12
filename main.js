@@ -13,6 +13,11 @@ const addresses = [
   //   type: 'page'
   // },
   {
+    url: 'https://media3.giphy.com/media/l0MYITigF2CBljitq/giphy.gif?cid=3640f6095c622172427772702ef9baca',
+    timeToDisplay: 0.2 * MINUTE,
+    type: 'image'
+  },
+  {
     url: 'https://media3.giphy.com/media/d3mn0IJEfZ58EotW/giphy.gif?cid=3640f6095c6220dc6d68493045d5e8fe',
     timeToDisplay: 0.2 * MINUTE,
     type: 'image'
@@ -32,11 +37,11 @@ const addresses = [
     timeToDisplay: 0.5 * MINUTE,
     type: 'image'
   },
-  {
-    url: 'https://media2.giphy.com/media/l3vR980psm941tsQg/giphy.gif?cid=3640f6095bf83e2c786f4161777774c5',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media2.giphy.com/media/l3vR980psm941tsQg/giphy.gif?cid=3640f6095bf83e2c786f4161777774c5',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
   {
     url: 'https://uchicago-vis-pl-lab.github.io/default-screen-saver/',
     timeToDisplay: 0.5 * MINUTE,
