@@ -1,6 +1,62 @@
 const SECOND = 1000;
 const MINUTE = 60000;
 const addresses = [
+  // FEB 21 ADDITIONS
+  // scribbly line
+  {
+    url: 'https://media.giphy.com/media/fUKy3SJq7Abew/giphy.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+  // butterfly chart
+  {
+    url: 'https://media.giphy.com/media/zKfbzrVMFIMGA/giphy.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+  // vision test
+  {
+    url: 'https://media.giphy.com/media/FqejyJeGTXWIo/giphy.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+  // knights tour
+  {
+    url: 'https://media.giphy.com/media/Qn2FghdQQXhgQ/giphy.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+  // stuffed picturer
+  {
+    url: 'https://media.giphy.com/media/SjzPQjFD6yu9G/giphy.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+  // hello this is dog
+  {
+    url: 'https://media.giphy.com/media/pSpmpxFxFwDpC/giphy.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+  // reasons to go to the sea
+  {
+    url: 'https://media.giphy.com/media/g7lZQp9qN6JJ6/giphy.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+  // cvs receipt
+  {
+    url: 'https://media.giphy.com/media/PL2LZxMviOCly/giphy.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+  // trip to moon
+  {
+    url: 'https://media.giphy.com/media/XADqhTKtqg06c/giphy.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+
   // Example Video
   // {
   //   url: 'https://github.com/mediaelement/mediaelement-files/blob/master/big_buck_bunny.mp4?raw=true',
@@ -22,11 +78,11 @@ const addresses = [
     timeToDisplay: 0.2 * MINUTE,
     type: 'image'
   },
-  {
-    url: 'https://media0.giphy.com/media/E8wm3nfbNWBdC/giphy.gif?cid=3640f6095bf83d18503555496f65f413',
-    timeToDisplay: 5.0 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media0.giphy.com/media/E8wm3nfbNWBdC/giphy.gif?cid=3640f6095bf83d18503555496f65f413',
+  //   timeToDisplay: 5.0 * MINUTE,
+  //   type: 'image'
+  // },
   {
     url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data.png',
     timeToDisplay: 0.2 * MINUTE,
