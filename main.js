@@ -1,6 +1,17 @@
 const SECOND = 1000;
 const MINUTE = 60000;
 const addresses = [
+  // MAR 5 ADDITIONS
+  {
+    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/code-fuzzer.jpg',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+  {
+    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/llvm-art.jpg',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
   // FEB 21 ADDITIONS
   // scribbly line
   {
