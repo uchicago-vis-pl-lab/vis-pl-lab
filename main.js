@@ -3,7 +3,7 @@ const MINUTE = 60000;
 const addresses = [
   // MAR 7 ADDITIONS
   { // silly cat drinking water
-    url: 'http://tormenta.cs.uchicago.edu/files/drinking_water.m4v',
+    url: 'http://tormenta.cs.uchicago.edu/files/drinking_water.mp4',
     timeToDisplay: MINUTE + (10 * SECOND),
     type: 'video'
   },
