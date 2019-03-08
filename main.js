@@ -1,8 +1,16 @@
 const SECOND = 1000;
 const MINUTE = 60000;
 const addresses = [
+  // bear live stream
+  {
+    // note: the stuff after the ? enables the live-stream
+    url: 'https://www.youtube.com/embed/qWlU7hWEl8c?rel=0;&autoplay=1&mute=1',
+    timeToDisplay: 2 * MINUTE,
+    type: 'page'
+  },
   // MAR 7 ADDITIONS
-  { // silly cat drinking water
+  // silly cat drinking water
+  {
     url: 'http://tormenta.cs.uchicago.edu/files/drinking_water.mp4',
     timeToDisplay: MINUTE + (10 * SECOND),
     type: 'video'
@@ -56,11 +64,11 @@ const addresses = [
     type: 'image'
   },
   // reasons to go to the sea
-  {
-    url: 'https://media.giphy.com/media/g7lZQp9qN6JJ6/giphy.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media.giphy.com/media/g7lZQp9qN6JJ6/giphy.gif',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
   // cvs receipt
   {
     url: 'https://media.giphy.com/media/PL2LZxMviOCly/giphy.gif',
@@ -85,56 +93,66 @@ const addresses = [
   //   timeToDisplay: 0.3 * MINUTE,
   //   type: 'page'
   // },
+  // cloud blowing on tree
   {
     url: 'https://media3.giphy.com/media/l0MYITigF2CBljitq/giphy.gif?cid=3640f6095c622172427772702ef9baca',
     timeToDisplay: 0.2 * MINUTE,
     type: 'image'
   },
+  // ground hog dancing
   {
     url: 'https://media3.giphy.com/media/d3mn0IJEfZ58EotW/giphy.gif?cid=3640f6095c6220dc6d68493045d5e8fe',
     timeToDisplay: 0.2 * MINUTE,
     type: 'image'
   },
+  // fire place
   // {
   //   url: 'https://media0.giphy.com/media/E8wm3nfbNWBdC/giphy.gif?cid=3640f6095bf83d18503555496f65f413',
   //   timeToDisplay: 5.0 * MINUTE,
   //   type: 'image'
   // },
+  // dear data poster
   {
     url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data.png',
     timeToDisplay: 0.2 * MINUTE,
     type: 'image'
   },
+  // andrews lighthous map
   {
     url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lighthouse-artifact.gif',
     timeToDisplay: 0.5 * MINUTE,
     type: 'image'
   },
+  // angry yeti
   // {
   //   url: 'https://media2.giphy.com/media/l3vR980psm941tsQg/giphy.gif?cid=3640f6095bf83e2c786f4161777774c5',
   //   timeToDisplay: 0.5 * MINUTE,
   //   type: 'image'
   // },
+  // table cartograms
   {
     url: 'https://uchicago-vis-pl-lab.github.io/default-screen-saver/',
     timeToDisplay: 0.5 * MINUTE,
     type: 'page'
   },
+  // programming langauge reading group poster
   {
     url: 'https://uchicago-cs.github.io/plrg/',
     timeToDisplay: 1 * MINUTE,
     type: 'page'
   },
+  // sketch and sketch video
   // {
   //   url: 'http://people.cs.uchicago.edu/~brianhempel/SVG%20Programming%20By%20Direct%20Manipulation%20of%20Intermediates%20De-anonymized%2048mb.mp4',
   //   timeToDisplay: 20 * MINUTE,
   //   type: 'video'
   // },
-  {
-    url: 'https://media1.giphy.com/media/t45sGfSonLg7m/giphy.gif?cid=3640f6095bf83d36506e786d6b8f9c28',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  }
+  // snoopy eating winter bones
+  // {
+  //   url: 'https://media1.giphy.com/media/t45sGfSonLg7m/giphy.gif?cid=3640f6095bf83d36506e786d6b8f9c28',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
 ];
 
 const pagesToCheckBase = [
