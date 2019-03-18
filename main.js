@@ -1,13 +1,32 @@
 const SECOND = 1000;
 const MINUTE = 60000;
 const addresses = [
-  // bear live stream
+  // patrick from spongebob saying you can do it
   {
-    // note: the stuff after the ? enables the live-stream
-    url: 'https://www.youtube.com/embed/qWlU7hWEl8c?rel=0;&autoplay=1&mute=1',
+    url: 'https://media2.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif?cid=3640f6095c8ee2af6d494246515a09bf',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
+
+  // jelley fish live stream
+  {
+    url: 'https://www.youtube.com/embed/vYvwnTEYRsc?rel=0;&autoplay=1&mute=1',
     timeToDisplay: 2 * MINUTE,
     type: 'page'
   },
+  // cat live stream
+  {
+    url: 'https://www.youtube.com/embed/zwztAP8_uRg?rel=0;&autoplay=1&mute=1',
+    timeToDisplay: 2 * MINUTE,
+    type: 'page'
+  },
+  // bear live stream
+  // {
+  //   // note: the stuff after the ? enables the live-stream
+  //   url: 'https://www.youtube.com/embed/qWlU7hWEl8c?rel=0;&autoplay=1&mute=1',
+  //   timeToDisplay: 2 * MINUTE,
+  //   type: 'page'
+  // },
   // MAR 7 ADDITIONS
   // silly cat drinking water
   {
@@ -28,23 +47,23 @@ const addresses = [
   },
   // FEB 21 ADDITIONS
   // scribbly line
-  {
-    url: 'https://media.giphy.com/media/fUKy3SJq7Abew/giphy.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media.giphy.com/media/fUKy3SJq7Abew/giphy.gif',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
   // butterfly chart
-  {
-    url: 'https://media.giphy.com/media/zKfbzrVMFIMGA/giphy.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media.giphy.com/media/zKfbzrVMFIMGA/giphy.gif',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
   // vision test
-  {
-    url: 'https://media.giphy.com/media/FqejyJeGTXWIo/giphy.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media.giphy.com/media/FqejyJeGTXWIo/giphy.gif',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
   // knights tour
   {
     url: 'https://media.giphy.com/media/Qn2FghdQQXhgQ/giphy.gif',
@@ -52,11 +71,11 @@ const addresses = [
     type: 'image'
   },
   // stuffed picturer
-  {
-    url: 'https://media.giphy.com/media/SjzPQjFD6yu9G/giphy.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media.giphy.com/media/SjzPQjFD6yu9G/giphy.gif',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
   // hello this is dog
   {
     url: 'https://media.giphy.com/media/pSpmpxFxFwDpC/giphy.gif',
@@ -70,17 +89,17 @@ const addresses = [
   //   type: 'image'
   // },
   // cvs receipt
-  {
-    url: 'https://media.giphy.com/media/PL2LZxMviOCly/giphy.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media.giphy.com/media/PL2LZxMviOCly/giphy.gif',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
   // trip to moon
-  {
-    url: 'https://media.giphy.com/media/XADqhTKtqg06c/giphy.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media.giphy.com/media/XADqhTKtqg06c/giphy.gif',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
 
   // Example Video
   // {
@@ -94,11 +113,11 @@ const addresses = [
   //   type: 'page'
   // },
   // cloud blowing on tree
-  {
-    url: 'https://media3.giphy.com/media/l0MYITigF2CBljitq/giphy.gif?cid=3640f6095c622172427772702ef9baca',
-    timeToDisplay: 0.2 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media3.giphy.com/media/l0MYITigF2CBljitq/giphy.gif?cid=3640f6095c622172427772702ef9baca',
+  //   timeToDisplay: 0.2 * MINUTE,
+  //   type: 'image'
+  // },
   // ground hog dancing
   {
     url: 'https://media3.giphy.com/media/d3mn0IJEfZ58EotW/giphy.gif?cid=3640f6095c6220dc6d68493045d5e8fe',
@@ -112,17 +131,17 @@ const addresses = [
   //   type: 'image'
   // },
   // dear data poster
-  {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data.png',
-    timeToDisplay: 0.2 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data.png',
+  //   timeToDisplay: 0.2 * MINUTE,
+  //   type: 'image'
+  // },
   // andrews lighthous map
-  {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lighthouse-artifact.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lighthouse-artifact.gif',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
   // angry yeti
   // {
   //   url: 'https://media2.giphy.com/media/l3vR980psm941tsQg/giphy.gif?cid=3640f6095bf83e2c786f4161777774c5',
@@ -197,7 +216,7 @@ refreshIfNeeded();
 
 let idx = 0;
 function setPage() {
-  const nextAddress = addresses[idx];
+  const nextAddress = addresses[Math.floor(Math.random() * addresses.length)];
   // preemptively deactivate everything
   const frame = document.getElementById('content-frame');
   const picHolder = document.getElementById('pic-holder');
