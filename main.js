@@ -1,6 +1,13 @@
 const SECOND = 1000;
 const MINUTE = 60000;
 const addresses = [
+  // vis reading group poster
+  {
+    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/vis-reading-group-poster.jpg',
+    timeToDisplay: 0.75 * MINUTE,
+    type: 'image'
+  },
+
   // patrick from spongebob saying you can do it
   {
     url: 'https://media2.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif?cid=3640f6095c8ee2af6d494246515a09bf',
@@ -8,12 +15,12 @@ const addresses = [
     type: 'image'
   },
 
-  // jelley fish live stream
-  {
-    url: 'https://www.youtube.com/embed/vYvwnTEYRsc?rel=0;&autoplay=1&mute=1',
-    timeToDisplay: 2 * MINUTE,
-    type: 'page'
-  },
+  // // jelley fish live stream
+  // {
+  //   url: 'https://www.youtube.com/embed/vYvwnTEYRsc?rel=0;&autoplay=1&mute=1',
+  //   timeToDisplay: 2 * MINUTE,
+  //   type: 'page'
+  // },
   // cat live stream
   {
     url: 'https://www.youtube.com/embed/zwztAP8_uRg?rel=0;&autoplay=1&mute=1',
@@ -21,12 +28,12 @@ const addresses = [
     type: 'page'
   },
   // bear live stream
-  // {
-  //   // note: the stuff after the ? enables the live-stream
-  //   url: 'https://www.youtube.com/embed/qWlU7hWEl8c?rel=0;&autoplay=1&mute=1',
-  //   timeToDisplay: 2 * MINUTE,
-  //   type: 'page'
-  // },
+  {
+    // note: the stuff after the ? enables the live-stream
+    url: 'https://www.youtube.com/embed/qWlU7hWEl8c?rel=0;&autoplay=1&mute=1',
+    timeToDisplay: 2 * MINUTE,
+    type: 'page'
+  },
   // MAR 7 ADDITIONS
   // silly cat drinking water
   {
@@ -53,11 +60,11 @@ const addresses = [
   //   type: 'image'
   // },
   // butterfly chart
-  // {
-  //   url: 'https://media.giphy.com/media/zKfbzrVMFIMGA/giphy.gif',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
+  {
+    url: 'https://media.giphy.com/media/zKfbzrVMFIMGA/giphy.gif',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  },
   // vision test
   // {
   //   url: 'https://media.giphy.com/media/FqejyJeGTXWIo/giphy.gif',
