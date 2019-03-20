@@ -3,7 +3,7 @@ const MINUTE = 60000;
 const addresses = [
   // vis reading group poster
   {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/vis-reading-group-poster.jpg',
+    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/vis-reading-group-poster.png',
     timeToDisplay: 0.75 * MINUTE,
     type: 'image'
   },
@@ -223,7 +223,8 @@ refreshIfNeeded();
 
 let idx = 0;
 function setPage() {
-  const nextAddress = addresses[Math.floor(Math.random() * addresses.length)];
+  // const nextAddress = addresses[Math.floor(Math.random() * addresses.length)];
+  const nextAddress = addresses[idx];
   // preemptively deactivate everything
   const frame = document.getElementById('content-frame');
   const picHolder = document.getElementById('pic-holder');
