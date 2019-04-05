@@ -9,11 +9,11 @@ const addresses = [
   },
 
   // patrick from spongebob saying you can do it
-  {
-    url: 'https://media2.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif?cid=3640f6095c8ee2af6d494246515a09bf',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
+  // {
+  //   url: 'https://media2.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif?cid=3640f6095c8ee2af6d494246515a09bf',
+  //   timeToDisplay: 0.5 * MINUTE,
+  //   type: 'image'
+  // },
 
   // // jelley fish live stream
   // {
@@ -22,11 +22,11 @@ const addresses = [
   //   type: 'page'
   // },
   // cat live stream
-  {
-    url: 'https://www.youtube.com/embed/zwztAP8_uRg?rel=0;&autoplay=1&mute=1',
-    timeToDisplay: 2 * MINUTE,
-    type: 'page'
-  },
+  // {
+  //   url: 'https://www.youtube.com/embed/zwztAP8_uRg?rel=0;&autoplay=1&mute=1',
+  //   timeToDisplay: 2 * MINUTE,
+  //   type: 'page'
+  // },
   // bear live stream
   {
     // note: the stuff after the ? enables the live-stream
@@ -179,16 +179,16 @@ const addresses = [
   //   timeToDisplay: 0.5 * MINUTE,
   //   type: 'image'
   // },
-  //April 2nd Additions due to Teo.
+  // April 2nd Additions due to Teo.
   {
-      url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/smoothing-demo.png',
-      timeToDisplay: 0.4 * MINUTE,
-      type: 'image'
+    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/smoothing-demo.png',
+    timeToDisplay: 0.4 * MINUTE,
+    type: 'image'
   },
   {
-      url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lip-rendering.png',
-      timeToDisplay: 0.4 * MINUTE,
-      type: 'image'
+    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lip-rendering.png',
+    timeToDisplay: 0.4 * MINUTE,
+    type: 'image'
   },
 
 ];
@@ -234,6 +234,7 @@ function refreshIfNeeded() {
 refreshIfNeeded();
 
 let idx = 0;
+const slider = document.getElementById('progress-bar-foreground');
 function setPage() {
   // const nextAddress = addresses[Math.floor(Math.random() * addresses.length)];
   const nextAddress = addresses[idx];
@@ -262,9 +263,17 @@ function setPage() {
     videoHolder.setAttribute('src', nextAddress.url);
     break;
   }
-
+  let percentDone = 0;
+  const updateSpeed = SECOND * 0.5;
+  const stepSize = updateSpeed / nextAddress.timeToDisplay * 100;
+  const updater = setInterval(() => {
+    percentDone += stepSize;
+    slider.setAttribute('style', `left: ${percentDone}%;`);
+  }, updateSpeed);
   setTimeout(() => {
     idx = (idx + 1) % addresses.length;
+    clearInterval(updater);
+    slider.setAttribute('style', 'left: 0;');
     setPage();
   }, nextAddress.timeToDisplay);
 }

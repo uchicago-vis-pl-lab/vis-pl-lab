@@ -54,3 +54,20 @@ iframe,
   align-items: center;
   justify-content: center;
 }
+
+#progress-bar {
+  background-color: black;
+  top: 0;
+  height: 5px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+#progress-bar-foreground {
+  background-color: #12939A;
+  height: 5px;
+  position: absolute;
+  transition: left 0.1s;
+  width: 100%;
+}
