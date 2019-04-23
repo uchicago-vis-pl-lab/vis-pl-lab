@@ -167,12 +167,18 @@ const addresses = [
     timeToDisplay: 1 * MINUTE,
     type: 'page'
   },
-  // sketch and sketch video
+  // sketch and sketch looong video
   // {
   //   url: 'http://people.cs.uchicago.edu/~brianhempel/SVG%20Programming%20By%20Direct%20Manipulation%20of%20Intermediates%20De-anonymized%2048mb.mp4',
   //   timeToDisplay: 20 * MINUTE,
   //   type: 'video'
   // },
+  // sketch and sketch 4min video
+  {
+    url: 'http://people.cs.uchicago.edu/~brianhempel/Semi-Automated_SVG_Programming_Interacting_with_Intermediates_4min_Silent_Subtitled.mp4',
+    timeToDisplay: 4 * MINUTE + 11 * SECOND,
+    type: 'video'
+  },
   // snoopy eating winter bones
   // {
   //   url: 'https://media1.giphy.com/media/t45sGfSonLg7m/giphy.gif?cid=3640f6095bf83d36506e786d6b8f9c28',
