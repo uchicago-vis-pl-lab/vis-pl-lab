@@ -9,6 +9,10 @@ body {
   width: 100%;
 }
 
+* {
+  overflow-x:hidden
+}
+
 iframe,
 #pic-holder,
 #video-holder {
