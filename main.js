@@ -10,7 +10,7 @@ const addresses = [
   {
     url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/forum-explorer-ff-short.mp4',
     timeToDisplay: SECOND * 31,
-    type: 'image'
+    type: 'video'
   },
 
   // patrick from spongebob saying you can do it
