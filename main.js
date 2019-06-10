@@ -182,7 +182,7 @@ const addresses = [
   //April 2nd Additions due to Teo.
   {
       url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/smoothing-demo.png',
-      timeToDisplay: 0.4 * MINUTE,
+      timeToDisplay: 0.5 * MINUTE,
       type: 'image'
   },
   {
@@ -190,7 +190,22 @@ const addresses = [
       timeToDisplay: 0.4 * MINUTE,
       type: 'image'
   },
-
+    //Jun 10th additions due to Teo
+    {
+      url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/iso-2019.png',
+      timeToDisplay: 0.5 * MINUTE,
+      type: 'image'
+  },
+    {
+      url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/ridge-surface-2019.png',
+      timeToDisplay: 0.5 * MINUTE,
+      type: 'image'
+  },
+    {
+      url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/streamlines-2019.png',
+      timeToDisplay: 0.5 * MINUTE,
+      type: 'image'
+  },
 ];
 
 const pagesToCheckBase = [
