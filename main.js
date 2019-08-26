@@ -13,7 +13,7 @@ const addresses = [
     type: 'video'
   },
     {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/particles.mp4',
+    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/particles.m4v',
     timeToDisplay: SECOND * 16,
     type: 'video'
   },
