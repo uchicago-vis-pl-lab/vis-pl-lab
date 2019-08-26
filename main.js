@@ -12,6 +12,12 @@ const addresses = [
     timeToDisplay: SECOND * 31,
     type: 'video'
   },
+    {
+    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/particles.mp4',
+    timeToDisplay: SECOND * 16,
+    type: 'video'
+  },
+
 
   // patrick from spongebob saying you can do it
   // {
