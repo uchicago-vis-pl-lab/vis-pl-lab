@@ -1,19 +1,21 @@
 const SECOND = 1000;
 const MINUTE = 60000;
 const addresses = [
-  // vis reading group poster
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/vis-reading-group-poster.png',
-    timeToDisplay: 0.75 * MINUTE,
-    type: 'image'
-  },
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/forum-explorer-ff-short.mp4',
-    timeToDisplay: SECOND * 31,
-    type: 'video'
-  },
+  // // vis reading group poster
+  // {
+  //   url:
+  //     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/vis-reading-group-poster.png',
+  //   timeToDisplay: 0.75 * MINUTE,
+  //   type: 'image'
+  // },
+  // // forum explorer
+  // {
+  //   url:
+  //     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/forum-explorer-ff-short.mp4',
+  //   timeToDisplay: SECOND * 31,
+  //   type: 'video'
+  // },
+  // deiderot particles stuff
   {
     url:
       'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/particles.m4v',
@@ -209,7 +211,7 @@ const addresses = [
     timeToDisplay: 0.5 * MINUTE,
     type: 'image'
   },
-  //Jun 10th additions due to Teo
+  // Jun 10th additions due to Teo
   {
     url:
       'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/iso-2019.png',
