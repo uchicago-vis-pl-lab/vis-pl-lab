@@ -3,21 +3,23 @@ const MINUTE = 60000;
 const addresses = [
   // vis reading group poster
   {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/vis-reading-group-poster.png',
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/vis-reading-group-poster.png',
     timeToDisplay: 0.75 * MINUTE,
     type: 'image'
   },
   {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/forum-explorer-ff-short.mp4',
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/forum-explorer-ff-short.mp4',
     timeToDisplay: SECOND * 31,
     type: 'video'
   },
-    {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/particles.m4v',
+  {
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/particles.m4v',
     timeToDisplay: SECOND * 16,
     type: 'video'
   },
-
 
   // patrick from spongebob saying you can do it
   // {
@@ -48,12 +50,14 @@ const addresses = [
   // },
   // MAR 5 ADDITIONS
   {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/code-fuzzer.jpg',
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/code-fuzzer.jpg',
     timeToDisplay: 0.5 * MINUTE,
     type: 'image'
   },
   {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/llvm-art.jpg',
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/llvm-art.jpg',
     timeToDisplay: 0.5 * MINUTE,
     type: 'image'
   },
@@ -150,7 +154,8 @@ const addresses = [
   // },
   // andrews lighthouse map
   {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lighthouse-artifact.gif',
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lighthouse-artifact.gif',
     timeToDisplay: 0.5 * MINUTE,
     type: 'image'
   },
@@ -180,7 +185,8 @@ const addresses = [
   // },
   // sketch and sketch 4min video
   {
-    url: 'http://people.cs.uchicago.edu/~brianhempel/Semi-Automated_SVG_Programming_Interacting_with_Intermediates_4min_Silent_Subtitled.mp4',
+    url:
+      'http://people.cs.uchicago.edu/~brianhempel/Semi-Automated_SVG_Programming_Interacting_with_Intermediates_4min_Silent_Subtitled.mp4',
     timeToDisplay: 4 * MINUTE + 11 * SECOND,
     type: 'video'
   },
@@ -192,39 +198,39 @@ const addresses = [
   // },
   // April 2nd Additions due to Teo.
   {
-
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/smoothing-demo.png',
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/smoothing-demo.png',
     timeToDisplay: 0.5 * MINUTE,
     type: 'image'
   },
   {
-    url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lip-rendering.png',
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lip-rendering.png',
     timeToDisplay: 0.5 * MINUTE,
     type: 'image'
   },
-    //Jun 10th additions due to Teo
-    {
-      url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/iso-2019.png',
-      timeToDisplay: 0.5 * MINUTE,
-      type: 'image'
+  //Jun 10th additions due to Teo
+  {
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/iso-2019.png',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
   },
-    {
-      url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/ridge-surface-2019.png',
-      timeToDisplay: 0.5 * MINUTE,
-      type: 'image'
+  {
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/ridge-surface-2019.png',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
   },
-    {
-      url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/streamlines-2019.png',
-      timeToDisplay: 0.5 * MINUTE,
-      type: 'image'
-  },
+  {
+    url:
+      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/streamlines-2019.png',
+    timeToDisplay: 0.5 * MINUTE,
+    type: 'image'
+  }
 ];
 
-const pagesToCheckBase = [
-  'index.html',
-  'main.css',
-  'main.js'
-];
+const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
 const checkIntervalSeconds = 30;
 let lastVersion = '';
 function refreshIfNeeded() {
@@ -236,23 +242,25 @@ function refreshIfNeeded() {
     // rest of list
     pagesToCheck = pagesToCheck.slice(1);
 
-    fetch(pageToCheck).then(response => {
-      if (response.ok) {
-        return response.text();
-      }
-    }).then(pageText => {
-      thisVersion += pageText;
-      if (pagesToCheck.length > 0) {
-        checkPages(pagesToCheck);
-      } else {
-        if (lastVersion.length === 0) {
-          lastVersion = thisVersion;
-        } else if (lastVersion !== thisVersion) {
-          location.reload(true);
+    fetch(pageToCheck)
+      .then(response => {
+        if (response.ok) {
+          return response.text();
         }
-        setTimeout(refreshIfNeeded, checkIntervalSeconds * SECOND);
-      }
-    });
+      })
+      .then(pageText => {
+        thisVersion += pageText;
+        if (pagesToCheck.length > 0) {
+          checkPages(pagesToCheck);
+        } else {
+          if (lastVersion.length === 0) {
+            lastVersion = thisVersion;
+          } else if (lastVersion !== thisVersion) {
+            location.reload(true);
+          }
+          setTimeout(refreshIfNeeded, checkIntervalSeconds * SECOND);
+        }
+      });
   }
 
   checkPages(pagesToCheckBase);
@@ -276,23 +284,26 @@ function setPage() {
   videoHolder.setAttribute('class', 'hide-holder');
 
   switch (nextAddress.type) {
-  default:
-  case 'image':
-    picHolder.setAttribute('class', 'show-holder');
-    picHolder.setAttribute('style', `background-image:url(${nextAddress.url})`);
-    break;
-  case 'page':
-    frame.setAttribute('class', 'show-holder');
-    frame.setAttribute('src', nextAddress.url);
-    break;
-  case 'video':
-    videoHolder.setAttribute('class', 'show-holder');
-    videoHolder.setAttribute('src', nextAddress.url);
-    break;
+    default:
+    case 'image':
+      picHolder.setAttribute('class', 'show-holder');
+      picHolder.setAttribute(
+        'style',
+        `background-image:url(${nextAddress.url})`
+      );
+      break;
+    case 'page':
+      frame.setAttribute('class', 'show-holder');
+      frame.setAttribute('src', nextAddress.url);
+      break;
+    case 'video':
+      videoHolder.setAttribute('class', 'show-holder');
+      videoHolder.setAttribute('src', nextAddress.url);
+      break;
   }
   let percentDone = 0;
   const updateSpeed = SECOND * 0.5;
-  const stepSize = updateSpeed / nextAddress.timeToDisplay * 100;
+  const stepSize = (updateSpeed / nextAddress.timeToDisplay) * 100;
   const updater = setInterval(() => {
     percentDone += stepSize;
     slider.setAttribute('style', `left: ${percentDone}%;`);
