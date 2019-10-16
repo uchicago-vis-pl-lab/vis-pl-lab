@@ -15,10 +15,14 @@ const addresses = [
   //   timeToDisplay: SECOND * 31,
   //   type: 'video'
   // },
+  // weather
+  {
+    url: 'https://www.youtube.com/embed/X05DrscHFZQ?rel=0;&autoplay=1&mute=1',
+    timeToDisplay: 7 * MINUTE + 20 * SECOND,
+    type: 'page'
+  },
   // TRAINSTRAINSTRAINSTRAINSTRAINSTRAINS
   {
-    // url:
-    //   'https://www.youtube.com/watch?v=Wseu1CTuxrs&list=PL0-sTc_CuqtVbR2-3_NV8m4ls4_6p2qV3;&autoplay=1&mute=1',
     url: 'https://www.youtube.com/embed/Wseu1CTuxrs?rel=0;&autoplay=1&mute=1',
     timeToDisplay: MINUTE * 10,
     type: 'page'
