@@ -282,7 +282,7 @@ function refreshIfNeeded() {
 // Load up the initial version to compare against.
 refreshIfNeeded();
 
-let idx = 0;
+let idx = Math.floor(Math.random() * addresses.length);
 const slider = document.getElementById('progress-bar-foreground');
 function setPage() {
   // const nextAddress = addresses[Math.floor(Math.random() * addresses.length)];
