@@ -1,247 +1,228 @@
+/* eslint-disable no-unused-vars */
 const SECOND = 1000;
 const MINUTE = 60000;
+
+// WANT TO ADD SOMETHING NEW?
+// FIND A SIMILAR ITEM, video/page/image, COPY IT. DOESN"T MATTER WHERE IT GOES.
+// INSERT IT AS APPROPRIATE INTO THE ADDRESSES ARRAY BELOW
+
+const VIS_READING_GROUP_POSTER = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/vis-reading-group-poster.png',
+  timeToDisplay: 0.75 * MINUTE,
+  type: 'image'
+};
+
+const FORUM_EXPLORER = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/forum-explorer-ff-short.mp4',
+  timeToDisplay: SECOND * 31,
+  type: 'video'
+};
+
+const WEATHER_CHANNEL_AD = {
+  url: 'https://www.youtube.com/embed/X05DrscHFZQ?rel=0;&autoplay=1&mute=1',
+  timeToDisplay: 7 * MINUTE + 20 * SECOND,
+  type: 'page'
+};
+
+function prepYouTube({link, time}) {
+  return {
+    url: `https://www.youtube.com/embed/${link}?rel=0;&autoplay=1&mute=1`,
+    timeToDisplay: time,
+    type: 'page'
+  };
+}
+
+const TRAIN_LINES = [
+  {link: 'RHTUDwud5Ag', time: MINUTE * 13 + SECOND * 22, color: 'blue'},
+  {link: 'YygD5TDWbBI', time: MINUTE * 3 + SECOND * 50, color: 'yellow'},
+  {link: 'Wseu1CTuxrs', time: MINUTE * 10, color: 'red'}
+]
+  .map(prepYouTube)
+  .filter(() => Math.random() > 0.5);
+
+const AIR_LINE_SAFTY_VIDEOS = [
+  {link: 'VTU8hdMb8hE', time: MINUTE * 3 + SECOND * 11}
+].map(prepYouTube);
+
+const DEIDEROT_PARTICLES = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/particles.m4v',
+  timeToDisplay: SECOND * 16,
+  type: 'video'
+};
+
+const JELLY_FISH = {
+  url: 'https://www.youtube.com/embed/vYvwnTEYRsc?rel=0;&autoplay=1&mute=1',
+  timeToDisplay: 2 * MINUTE,
+  type: 'page'
+};
+const BEARS = {
+  // note: the stuff after the ? enables the live-stream
+  url: 'https://www.youtube.com/embed/qWlU7hWEl8c?rel=0;&autoplay=1&mute=1',
+  timeToDisplay: 2 * MINUTE,
+  type: 'page'
+};
+
+// CAT PICS?
+const CAT_DRINKING_WATER = {
+  url: 'http://tormenta.cs.uchicago.edu/files/drinking_water.mp4',
+  timeToDisplay: MINUTE + 10 * SECOND,
+  type: 'video'
+};
+const CODE_FUZZER = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/code-fuzzer.jpg',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+const LLVM_ART = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/llvm-art.jpg',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+const GOETHE = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/goethe-decandolle.png',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+const KNIGHTS_TOUR = {
+  url: 'https://media.giphy.com/media/Qn2FghdQQXhgQ/giphy.gif',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+
+const BUTTERFLY_CHART = {
+  url: 'https://media.giphy.com/media/zKfbzrVMFIMGA/giphy.gif',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+const LIVE_WEATHER = {
+  url:
+    'https://maps.darksky.net/@apparent_temperature,44.152,-87.824,2901696?3d',
+  timeToDisplay: 0.3 * MINUTE,
+  type: 'page'
+};
+
+const FIRE_PLACE = {
+  url:
+    'https://media0.giphy.com/media/E8wm3nfbNWBdC/giphy.gif?cid=3640f6095bf83d18503555496f65f413',
+  timeToDisplay: 5.0 * MINUTE,
+  type: 'image'
+};
+const DEAR_DATA = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data-lo-fi.jpg',
+  timeToDisplay: 0.2 * MINUTE,
+  type: 'image'
+};
+const LIGHT_HOUSE_MAP = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lighthouse-artifact.gif',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+
+const TABLE_CARTOGRAM = {
+  url: 'https://uchicago-vis-pl-lab.github.io/default-screen-saver/',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'page'
+};
+
+const PLRG_POSTER = {
+  url: 'https://uchicago-cs.github.io/plrg/',
+  timeToDisplay: 1 * MINUTE,
+  type: 'page'
+};
+// sketch and sketch looong video
+const LONG_SKETCH_AND_SKETCH = {
+  url:
+    'http://people.cs.uchicago.edu/~brianhempel/SVG%20Programming%20By%20Direct%20Manipulation%20of%20Intermediates%20De-anonymized%2048mb.mp4',
+  timeToDisplay: 20 * MINUTE,
+  type: 'video'
+};
+// sketch and sketch 4min video
+const FOURMIN_SKETCH_AND_SKETCH = {
+  url:
+    'http://people.cs.uchicago.edu/~brianhempel/Semi-Automated_SVG_Programming_Interacting_with_Intermediates_4min_Silent_Subtitled.mp4',
+  timeToDisplay: 4 * MINUTE + 11 * SECOND,
+  type: 'video'
+};
+
+const TEO_SCI_VIS_1 = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/smoothing-demo.png',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+const TEO_SCI_VIS_2 = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lip-rendering.png',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+const TEO_SCI_VIS_3 = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/iso-2019.png',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+const TEO_SCI_VIS_4 = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/ridge-surface-2019.png',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+const TEO_SCI_VIS_5 = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/streamlines-2019.png',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
 const addresses = [
-  // // vis reading group poster
-  // {
-  //   url:
-  //     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/vis-reading-group-poster.png',
-  //   timeToDisplay: 0.75 * MINUTE,
-  //   type: 'image'
-  // },
-  // // forum explorer
-  // {
-  //   url:
-  //     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/forum-explorer-ff-short.mp4',
-  //   timeToDisplay: SECOND * 31,
-  //   type: 'video'
-  // },
-  // weather
-  {
-    url: 'https://www.youtube.com/embed/X05DrscHFZQ?rel=0;&autoplay=1&mute=1',
-    timeToDisplay: 7 * MINUTE + 20 * SECOND,
-    type: 'page'
-  },
-  // TRAINSTRAINSTRAINSTRAINSTRAINSTRAINS
-  {
-    url: 'https://www.youtube.com/embed/Wseu1CTuxrs?rel=0;&autoplay=1&mute=1',
-    timeToDisplay: MINUTE * 10,
-    type: 'page'
-  },
-  // deiderot particles stuff
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/particles.m4v',
-    timeToDisplay: SECOND * 16,
-    type: 'video'
-  },
+  // LIVE STREAMS
+  // JELLY_FISH,
+  // BEARS,
 
-  // patrick from spongebob saying you can do it
-  // {
-  //   url: 'https://media2.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif?cid=3640f6095c8ee2af6d494246515a09bf',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
+  // MEMES OR PSUEDOMMEMES
+  LLVM_ART,
+  KNIGHTS_TOUR,
+  // // BUTTERFLY_CHART,
+  FIRE_PLACE,
+  ...AIR_LINE_SAFTY_VIDEOS,
+  ...TRAIN_LINES,
 
-  // // jelley fish live stream
-  // {
-  //   url: 'https://www.youtube.com/embed/vYvwnTEYRsc?rel=0;&autoplay=1&mute=1',
-  //   timeToDisplay: 2 * MINUTE,
-  //   type: 'page'
-  // },
-  // bear live stream
-  // {
-  //   // note: the stuff after the ? enables the live-stream
-  //   url: 'https://www.youtube.com/embed/qWlU7hWEl8c?rel=0;&autoplay=1&mute=1',
-  //   timeToDisplay: 2 * MINUTE,
-  //   type: 'page'
-  // },
-  // MAR 7 ADDITIONS
-  // silly cat drinking water
-  // {
-  //   url: 'http://tormenta.cs.uchicago.edu/files/drinking_water.mp4',
-  //   timeToDisplay: MINUTE + (10 * SECOND),
-  //   type: 'video'
-  // },
-  // MAR 5 ADDITIONS
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/code-fuzzer.jpg',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/llvm-art.jpg',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  // FEB 21 ADDITIONS
-  // scribbly line
-  // {
-  //   url: 'https://media.giphy.com/media/fUKy3SJq7Abew/giphy.gif',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
-  // butterfly chart
-  {
-    url: 'https://media.giphy.com/media/zKfbzrVMFIMGA/giphy.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  // vision test
-  // {
-  //   url: 'https://media.giphy.com/media/FqejyJeGTXWIo/giphy.gif',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
-  // knights tour
-  {
-    url: 'https://media.giphy.com/media/Qn2FghdQQXhgQ/giphy.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  // stuffed picturer
-  // {
-  //   url: 'https://media.giphy.com/media/SjzPQjFD6yu9G/giphy.gif',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
-  // hello this is dog
-  // {
-  //   url: 'https://media.giphy.com/media/pSpmpxFxFwDpC/giphy.gif',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
-  // reasons to go to the sea
-  // {
-  //   url: 'https://media.giphy.com/media/g7lZQp9qN6JJ6/giphy.gif',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
-  // cvs receipt
-  // {
-  //   url: 'https://media.giphy.com/media/PL2LZxMviOCly/giphy.gif',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
-  // trip to moon
-  // {
-  //   url: 'https://media.giphy.com/media/XADqhTKtqg06c/giphy.gif',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
+  // WEATHER THINGS
+  LIVE_WEATHER,
+  WEATHER_CHANNEL_AD,
 
-  // Example Video
-  // {
-  //   url: 'https://github.com/mediaelement/mediaelement-files/blob/master/big_buck_bunny.mp4?raw=true',
-  //   timeToDisplay: 0.2 * MINUTE,
-  //   type: 'video'
-  // },
-  // {
-  //   url: 'https://maps.darksky.net/@temperature,41.574,-87.832,7',
-  //   timeToDisplay: 0.3 * MINUTE,
-  //   type: 'page'
-  // },
-  // cloud blowing on tree
-  // {
-  //   url: 'https://media3.giphy.com/media/l0MYITigF2CBljitq/giphy.gif?cid=3640f6095c622172427772702ef9baca',
-  //   timeToDisplay: 0.2 * MINUTE,
-  //   type: 'image'
-  // },
-  // ground hog dancing
-  // {
-  //   url: 'https://media3.giphy.com/media/d3mn0IJEfZ58EotW/giphy.gif?cid=3640f6095c6220dc6d68493045d5e8fe',
-  //   timeToDisplay: 0.2 * MINUTE,
-  //   type: 'image'
-  // },
-  // fire place
-  // {
-  //   url: 'https://media0.giphy.com/media/E8wm3nfbNWBdC/giphy.gif?cid=3640f6095bf83d18503555496f65f413',
-  //   timeToDisplay: 5.0 * MINUTE,
-  //   type: 'image'
-  // },
-  // dear data poster
-  // {
-  //   url: 'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data.jpg',
-  //   timeToDisplay: 0.2 * MINUTE,
-  //   type: 'image'
-  // },
-  // andrews lighthouse map
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lighthouse-artifact.gif',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  // angry yeti
-  // {
-  //   url: 'https://media2.giphy.com/media/l3vR980psm941tsQg/giphy.gif?cid=3640f6095bf83e2c786f4161777774c5',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
-  // table cartograms
-  {
-    url: 'https://uchicago-vis-pl-lab.github.io/default-screen-saver/',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'page'
-  },
-  // programming langauge reading group poster
-  {
-    url: 'https://uchicago-cs.github.io/plrg/',
-    timeToDisplay: 1 * MINUTE,
-    type: 'page'
-  },
-  // sketch and sketch looong video
-  // {
-  //   url: 'http://people.cs.uchicago.edu/~brianhempel/SVG%20Programming%20By%20Direct%20Manipulation%20of%20Intermediates%20De-anonymized%2048mb.mp4',
-  //   timeToDisplay: 20 * MINUTE,
-  //   type: 'video'
-  // },
-  // sketch and sketch 4min video
-  {
-    url:
-      'http://people.cs.uchicago.edu/~brianhempel/Semi-Automated_SVG_Programming_Interacting_with_Intermediates_4min_Silent_Subtitled.mp4',
-    timeToDisplay: 4 * MINUTE + 11 * SECOND,
-    type: 'video'
-  },
-  // snoopy eating winter bones
-  // {
-  //   url: 'https://media1.giphy.com/media/t45sGfSonLg7m/giphy.gif?cid=3640f6095bf83d36506e786d6b8f9c28',
-  //   timeToDisplay: 0.5 * MINUTE,
-  //   type: 'image'
-  // },
-  // April 2nd Additions due to Teo.
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/smoothing-demo.png',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lip-rendering.png',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  // Jun 10th additions due to Teo
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/iso-2019.png',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/ridge-surface-2019.png',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  },
-  {
-    url:
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/streamlines-2019.png',
-    timeToDisplay: 0.5 * MINUTE,
-    type: 'image'
-  }
+  // CAT PICS?
+  // CAT_DRINKING_WATER,
+  CODE_FUZZER,
+
+  // DATA VIS + PROJECTS
+  // VIS_READING_GROUP_POSTER,
+  // FORUM_EXPLORER,
+  TABLE_CARTOGRAM,
+  DEAR_DATA,
+  LIGHT_HOUSE_MAP,
+  GOETHE,
+
+  // PLRG + PROJECTS
+  PLRG_POSTER,
+  // LONG_SKETCH_AND_SKETCH,
+  FOURMIN_SKETCH_AND_SKETCH,
+
+  // SCI VIS THINGS
+  TEO_SCI_VIS_1,
+  TEO_SCI_VIS_2,
+  TEO_SCI_VIS_3,
+  TEO_SCI_VIS_4,
+  TEO_SCI_VIS_5,
+  DEIDEROT_PARTICLES
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
