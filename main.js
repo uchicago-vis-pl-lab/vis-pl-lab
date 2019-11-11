@@ -103,7 +103,7 @@ const BUTTERFLY_CHART = {
 const LIVE_WEATHER = {
   url:
     'https://maps.darksky.net/@apparent_temperature,44.152,-87.824,2901696?3d',
-  timeToDisplay: 0.3 * MINUTE,
+  timeToDisplay: 1.5 * MINUTE,
   type: 'page'
 };
 
@@ -113,6 +113,14 @@ const FIRE_PLACE = {
   timeToDisplay: 5.0 * MINUTE,
   type: 'image'
 };
+
+const POTATOE = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/potatoe.png',
+  timeToDisplay: 0.5 * MINUTE,
+  type: 'image'
+};
+
 const DEAR_DATA = {
   url:
     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data-lo-fi.jpg',
@@ -194,6 +202,7 @@ const addresses = [
   FIRE_PLACE,
   ...AIR_LINE_SAFTY_VIDEOS,
   ...TRAIN_LINES,
+  POTATOE,
 
   // WEATHER THINGS
   LIVE_WEATHER,
