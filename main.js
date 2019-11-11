@@ -123,7 +123,7 @@ const POTATOE = {
 
 const DEAR_DATA = {
   url:
-    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data-lo-fi.jpg',
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/datavis-18-dear-data-lo-fi.png',
   timeToDisplay: 0.2 * MINUTE,
   type: 'image'
 };
