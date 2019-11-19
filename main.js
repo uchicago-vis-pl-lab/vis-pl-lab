@@ -202,7 +202,7 @@ const addresses = [
   FIRE_PLACE,
   ...AIR_LINE_SAFTY_VIDEOS,
   ...TRAIN_LINES,
-  POTATOE,
+  // POTATOE,
 
   // WEATHER THINGS
   LIVE_WEATHER,
