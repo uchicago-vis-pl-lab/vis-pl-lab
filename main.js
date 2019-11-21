@@ -26,6 +26,12 @@ const WEATHER_CHANNEL_AD = {
   type: 'page'
 };
 
+const BUFFALO = {
+  url: 'https://www.youtube.com/embed/8oGcbN3Me7Y?rel=0;&autoplay=1&mute=1',
+  timeToDisplay: 2 * MINUTE,
+  type: 'page'
+};
+
 function prepYouTube({link, time}) {
   return {
     url: `https://www.youtube.com/embed/${link}?rel=0;&autoplay=1&mute=1`,
@@ -196,6 +202,7 @@ const addresses = [
   // BEARS,
 
   // MEMES OR PSUEDOMMEMES
+  BUFFALO,
   LLVM_ART,
   KNIGHTS_TOUR,
   // // BUTTERFLY_CHART,
