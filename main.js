@@ -41,9 +41,11 @@ function prepYouTube({link, time}) {
 }
 
 const TRAIN_LINES = [
-  {link: 'RHTUDwud5Ag', time: MINUTE * 13 + SECOND * 22, color: 'blue'},
-  {link: 'YygD5TDWbBI', time: MINUTE * 3 + SECOND * 50, color: 'yellow'},
-  {link: 'Wseu1CTuxrs', time: MINUTE * 10, color: 'red'}
+  {link: 'm9geCp5I0Ho', time: MINUTE * 16 + SECOND * 49, color: 'purple'},
+  {link: '6bU5n93Jp1k', time: MINUTE * 11 + SECOND * 28, color: 'brown'}
+  // {link: 'RHTUDwud5Ag', time: MINUTE * 13 + SECOND * 22, color: 'blue'},
+  // {link: 'YygD5TDWbBI', time: MINUTE * 3 + SECOND * 50, color: 'yellow'},
+  // {link: 'Wseu1CTuxrs', time: MINUTE * 10, color: 'red'}
 ]
   .map(prepYouTube)
   .filter(() => Math.random() > 0.5);
