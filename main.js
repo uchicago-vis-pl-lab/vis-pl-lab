@@ -32,6 +32,12 @@ const BUFFALO = {
   type: 'page'
 };
 
+const BUFFALO_2 = {
+  url: 'https://www.youtube.com/embed/AExIcMII33o?rel=0;&autoplay=1&mute=1',
+  timeToDisplay: 1.0 * MINUTE,
+  type: 'page'
+};
+
 function prepYouTube({link, time}) {
   return {
     url: `https://www.youtube.com/embed/${link}?rel=0;&autoplay=1&mute=1`,
@@ -204,12 +210,13 @@ const addresses = [
   // BEARS,
 
   // MEMES OR PSUEDOMMEMES
+  BUFFALO_2,
   BUFFALO,
   LLVM_ART,
   KNIGHTS_TOUR,
   // // BUTTERFLY_CHART,
   FIRE_PLACE,
-  ...AIR_LINE_SAFTY_VIDEOS,
+  // ...AIR_LINE_SAFTY_VIDEOS,
   ...TRAIN_LINES,
   // POTATOE,
 
