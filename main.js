@@ -60,6 +60,9 @@ const AIR_LINE_SAFTY_VIDEOS = [
   {link: 'VTU8hdMb8hE', time: MINUTE * 3 + SECOND * 11}
 ].map(prepYouTube);
 
+
+const BALLOONS = prepYouTube({link: 'ENUibJRdlkk', time: MINUTE * 2 + 10 * SECOND});
+
 const DEIDEROT_PARTICLES = {
   url:
     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/particles.m4v',
@@ -210,6 +213,7 @@ const addresses = [
   // BEARS,
 
   // MEMES OR PSUEDOMMEMES
+  BALLOONS,
   BUFFALO_2,
   BUFFALO,
   LLVM_ART,
