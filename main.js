@@ -56,7 +56,7 @@ function prepYouTube({link, time}) {
 
 const TRAIN_LINES = [
   {link: 'VdFD2hy7kFM', time: 8.0 * MINUTE, color: 'JAPAN'},
-  {link: 'PPbTYFAFAic', time: 8.0 * MINUTE, color: 'CALIFORNIA'},
+  {link: 'PPbTYFAFAic', time: 4.0 * MINUTE, color: 'CALIFORNIA'},
   // {link: 'm9geCp5I0Ho', time: MINUTE * 16 + SECOND * 49, color: 'purple'},
   {link: '6bU5n93Jp1k', time: MINUTE * 11 + SECOND * 28, color: 'brown'}
   // {link: 'RHTUDwud5Ag', time: MINUTE * 13 + SECOND * 22, color: 'blue'},
