@@ -38,6 +38,14 @@ const BUFFALO_2 = {
   type: 'page'
 };
 
+const RANDOM_OFFSET = Math.floor(Math.random() * 21000);
+const BAD_GOVERNMENT = {
+  url: `https://www.youtube.com/embed/kY9P7ruzOy4?rel=0;&autoplay=1&mute=1&start=${RANDOM_OFFSET}`,
+  timeToDisplay: 1.0 * MINUTE,
+  type: 'page'
+};
+
+
 function prepYouTube({link, time}) {
   return {
     url: `https://www.youtube.com/embed/${link}?rel=0;&autoplay=1&mute=1`,
@@ -47,7 +55,9 @@ function prepYouTube({link, time}) {
 }
 
 const TRAIN_LINES = [
-  {link: 'm9geCp5I0Ho', time: MINUTE * 16 + SECOND * 49, color: 'purple'},
+  {link: 'VdFD2hy7kFM', time: 8.0 * MINUTE, color: 'JAPAN'},
+  {link: 'PPbTYFAFAic', time: 8.0 * MINUTE, color: 'CALIFORNIA'},
+  // {link: 'm9geCp5I0Ho', time: MINUTE * 16 + SECOND * 49, color: 'purple'},
   {link: '6bU5n93Jp1k', time: MINUTE * 11 + SECOND * 28, color: 'brown'}
   // {link: 'RHTUDwud5Ag', time: MINUTE * 13 + SECOND * 22, color: 'blue'},
   // {link: 'YygD5TDWbBI', time: MINUTE * 3 + SECOND * 50, color: 'yellow'},
@@ -213,19 +223,20 @@ const addresses = [
   // BEARS,
 
   // MEMES OR PSUEDOMMEMES
+  BAD_GOVERNMENT,
   BALLOONS,
-  BUFFALO_2,
+  // BUFFALO_2,
   BUFFALO,
   LLVM_ART,
-  KNIGHTS_TOUR,
+  // KNIGHTS_TOUR,
   // // BUTTERFLY_CHART,
-  FIRE_PLACE,
+  // FIRE_PLACE,
   // ...AIR_LINE_SAFTY_VIDEOS,
   ...TRAIN_LINES,
   // POTATOE,
 
   // WEATHER THINGS
-  LIVE_WEATHER,
+  // LIVE_WEATHER,
   WEATHER_CHANNEL_AD,
 
   // CAT PICS?
@@ -241,7 +252,7 @@ const addresses = [
   GOETHE,
 
   // PLRG + PROJECTS
-  PLRG_POSTER,
+  // PLRG_POSTER,
   // LONG_SKETCH_AND_SKETCH,
   FOURMIN_SKETCH_AND_SKETCH,
 
