@@ -45,7 +45,6 @@ const BAD_GOVERNMENT = {
   type: 'page'
 };
 
-
 function prepYouTube({link, time}) {
   return {
     url: `https://www.youtube.com/embed/${link}?rel=0;&autoplay=1&mute=1`,
@@ -55,7 +54,6 @@ function prepYouTube({link, time}) {
 }
 
 const TRAIN_LINES = [
-  {link: 'VdFD2hy7kFM', time: 8.0 * MINUTE, color: 'JAPAN'},
   {link: 'PPbTYFAFAic', time: 4.0 * MINUTE, color: 'CALIFORNIA'},
   // {link: 'm9geCp5I0Ho', time: MINUTE * 16 + SECOND * 49, color: 'purple'},
   {link: '6bU5n93Jp1k', time: MINUTE * 11 + SECOND * 28, color: 'brown'}
@@ -70,8 +68,10 @@ const AIR_LINE_SAFTY_VIDEOS = [
   {link: 'VTU8hdMb8hE', time: MINUTE * 3 + SECOND * 11}
 ].map(prepYouTube);
 
-
-const BALLOONS = prepYouTube({link: 'ENUibJRdlkk', time: MINUTE * 2 + 10 * SECOND});
+const BALLOONS = prepYouTube({
+  link: 'ENUibJRdlkk',
+  time: MINUTE * 2 + 10 * SECOND
+});
 
 const DEIDEROT_PARTICLES = {
   url:
@@ -138,13 +138,6 @@ const FIRE_PLACE = {
   url:
     'https://media0.giphy.com/media/E8wm3nfbNWBdC/giphy.gif?cid=3640f6095bf83d18503555496f65f413',
   timeToDisplay: 5.0 * MINUTE,
-  type: 'image'
-};
-
-const POTATOE = {
-  url:
-    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/potatoe.png',
-  timeToDisplay: 0.5 * MINUTE,
   type: 'image'
 };
 
@@ -233,7 +226,6 @@ const addresses = [
   // FIRE_PLACE,
   // ...AIR_LINE_SAFTY_VIDEOS,
   ...TRAIN_LINES,
-  // POTATOE,
 
   // WEATHER THINGS
   // LIVE_WEATHER,
