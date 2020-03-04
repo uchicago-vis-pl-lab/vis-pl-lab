@@ -64,6 +64,12 @@ const TRAIN_LINES = [
   .map(prepYouTube)
   .filter(() => Math.random() > 0.5);
 
+const COLORS_OF_THE_YEAR = [
+  {link: 'TSCN_-gIbVg', time: 1 * MINUTE + 17 * SECOND, color: 'blue'},
+  {link: '3HSH8dj2VRE', time: 1 * MINUTE + 9 * SECOND, color: 'coral'},
+  {link: '8zC75u81VKg', time: 1 * MINUTE + 9 * SECOND, color: 'greenery'}
+].map(prepYouTube);
+
 const AIR_LINE_SAFTY_VIDEOS = [
   {link: 'VTU8hdMb8hE', time: MINUTE * 3 + SECOND * 11}
 ].map(prepYouTube);
@@ -216,6 +222,7 @@ const addresses = [
   // BEARS,
 
   // MEMES OR PSUEDOMMEMES
+  ...COLORS_OF_THE_YEAR,
   BAD_GOVERNMENT,
   BALLOONS,
   // BUFFALO_2,
