@@ -66,7 +66,6 @@ const TRAIN_LINES = [
 
 const COLORS_OF_THE_YEAR = [
   {link: 'TSCN_-gIbVg', time: 1 * MINUTE + 17 * SECOND, color: 'blue'},
-  {link: '3HSH8dj2VRE', time: 1 * MINUTE + 9 * SECOND, color: 'coral'},
   {link: '8zC75u81VKg', time: 1 * MINUTE + 9 * SECOND, color: 'greenery'}
 ].map(prepYouTube);
 
