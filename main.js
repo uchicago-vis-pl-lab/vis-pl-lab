@@ -13,6 +13,19 @@ const VIS_READING_GROUP_POSTER = {
   type: 'image'
 };
 
+const DALLE_STUFF = [
+  'future-calc',
+  'dalle-logo-1',
+  'dalle-logo-2',
+  'dalle-logo-3',
+  'dalle-logo-4',
+].map(x => ({  url:
+    `https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/${x}.png`,
+  timeToDisplay: 0.75 * MINUTE,
+  type: 'image'}))
+
+
+
 const FORUM_EXPLORER = {
   url:
     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/forum-explorer-ff-short.mp4',
@@ -54,19 +67,20 @@ function prepYouTube({link, time}) {
 }
 
 const TRAIN_LINES = [
-  {link: 'PPbTYFAFAic', time: 4.0 * MINUTE, color: 'CALIFORNIA'},
-  // {link: 'm9geCp5I0Ho', time: MINUTE * 16 + SECOND * 49, color: 'purple'},
-  {link: '6bU5n93Jp1k', time: MINUTE * 11 + SECOND * 28, color: 'brown'}
+  // {link: 'PPbTYFAFAic', time: 4.0 * MINUTE, color: 'CALIFORNIA'},
+  {link: 'm9geCp5I0Ho', time: MINUTE * 16 + SECOND * 49, color: 'purple'},
+  // {link: '6bU5n93Jp1k', time: MINUTE * 11 + SECOND * 28, color: 'brown'}
   // {link: 'RHTUDwud5Ag', time: MINUTE * 13 + SECOND * 22, color: 'blue'},
-  // {link: 'YygD5TDWbBI', time: MINUTE * 3 + SECOND * 50, color: 'yellow'},
+  {link: 'YygD5TDWbBI', time: MINUTE * 3 + SECOND * 50, color: 'yellow'},
   // {link: 'Wseu1CTuxrs', time: MINUTE * 10, color: 'red'}
 ]
   .map(prepYouTube)
   .filter(() => Math.random() > 0.5);
 
 const COLORS_OF_THE_YEAR = [
-  {link: 'TSCN_-gIbVg', time: 1 * MINUTE + 17 * SECOND, color: 'blue'},
-  {link: '8zC75u81VKg', time: 1 * MINUTE + 9 * SECOND, color: 'greenery'}
+  // {link: 'TSCN_-gIbVg', time: 1 * MINUTE + 17 * SECOND, color: 'blue'},
+  // {link: '8zC75u81VKg', time: 1 * MINUTE + 9 * SECOND, color: 'greenery'}
+  {link: 'DpOjWPKT0QM', time: 0.25 * MINUTE, color: 'pink'}
 ].map(prepYouTube);
 
 const AIR_LINE_SAFTY_VIDEOS = [
@@ -241,7 +255,7 @@ const addresses = [
   // MEMES OR PSUEDOMMEMES
   ...COLORS_OF_THE_YEAR,
   BAD_GOVERNMENT,
-  BALLOONS,
+  // BALLOONS,
   // BUFFALO_2,
   BUFFALO,
   LLVM_ART,
@@ -250,6 +264,7 @@ const addresses = [
   // FIRE_PLACE,
   // ...AIR_LINE_SAFTY_VIDEOS,
   ...TRAIN_LINES,
+  ...DALLE_STUFF,
 
   // WEATHER THINGS
   // LIVE_WEATHER,
@@ -262,10 +277,10 @@ const addresses = [
   // DATA VIS + PROJECTS
   // VIS_READING_GROUP_POSTER,
   // FORUM_EXPLORER,
-  TABLE_CARTOGRAM,
+  // TABLE_CARTOGRAM,
   DEAR_DATA,
-  LIGHT_HOUSE_MAP,
-  GOETHE,
+  // LIGHT_HOUSE_MAP,
+  // GOETHE,
 
   // PLRG + PROJECTS
   // PLRG_POSTER,
@@ -281,9 +296,9 @@ const addresses = [
   // DEIDEROT_PARTICLES,
 
   // some recent papers
-  uist21,
-  tacoThing,
-  visZines
+  // uist21,
+  // tacoThing,
+  // visZines
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
