@@ -247,6 +247,14 @@ const visZines = {
   timeToDisplay: 0.5 * MINUTE,
   type: 'image'
 };
+
+const SPIN_LAMBDA = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/spinning-lambda.mp4',
+  timeToDisplay: 30 * SECOND,
+  type: 'video'
+};
+
 const addresses = [
   // LIVE STREAMS
   // JELLY_FISH,
@@ -299,6 +307,7 @@ const addresses = [
   // uist21,
   // tacoThing,
   // visZines
+  SPIN_LAMBDA,
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
