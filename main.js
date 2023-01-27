@@ -152,12 +152,7 @@ const BUTTERFLY_CHART = {
   timeToDisplay: 0.5 * MINUTE,
   type: 'image'
 };
-const LIVE_WEATHER = {
-  url:
-    'https://maps.darksky.net/@apparent_temperature,44.152,-87.824,2901696?3d',
-  timeToDisplay: 1.5 * MINUTE,
-  type: 'page'
-};
+
 
 const FIRE_PLACE = {
   url:
@@ -205,36 +200,17 @@ const FOURMIN_SKETCH_AND_SKETCH = {
   type: 'video'
 };
 
-const TEO_SCI_VIS_1 = {
-  url:
+const TEO_SCI_VIS = [
     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/smoothing-demo.png',
-  timeToDisplay: 0.5 * MINUTE,
-  type: 'image'
-};
-const TEO_SCI_VIS_2 = {
-  url:
     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/lip-rendering.png',
-  timeToDisplay: 0.5 * MINUTE,
-  type: 'image'
-};
-const TEO_SCI_VIS_3 = {
-  url:
     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/iso-2019.png',
-  timeToDisplay: 0.5 * MINUTE,
-  type: 'image'
-};
-const TEO_SCI_VIS_4 = {
-  url:
     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/ridge-surface-2019.png',
-  timeToDisplay: 0.5 * MINUTE,
-  type: 'image'
-};
-const TEO_SCI_VIS_5 = {
-  url:
     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/streamlines-2019.png',
+].map(url => ({
+  url,
   timeToDisplay: 0.5 * MINUTE,
   type: 'image'
-};
+}))
 const uist21 = {
   url:
     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/uist21.jpeg',
@@ -267,7 +243,7 @@ const addresses = [
   // BEARS,
 
   // MEMES OR PSUEDOMMEMES
-  ...COLORS_OF_THE_YEAR,
+  // ...COLORS_OF_THE_YEAR,
   BAD_GOVERNMENT,
   // BALLOONS,
   // BUFFALO_2,
@@ -275,7 +251,7 @@ const addresses = [
   LLVM_ART,
   // KNIGHTS_TOUR,
   // // BUTTERFLY_CHART,
-  // FIRE_PLACE,
+  FIRE_PLACE,
   // ...AIR_LINE_SAFTY_VIDEOS,
   ...TRAIN_LINES,
   ...DALLE_STUFF,
@@ -286,13 +262,13 @@ const addresses = [
 
   // CAT PICS?
   // CAT_DRINKING_WATER,
-  CODE_FUZZER,
+  // CODE_FUZZER,
 
   // DATA VIS + PROJECTS
   // VIS_READING_GROUP_POSTER,
   // FORUM_EXPLORER,
   // TABLE_CARTOGRAM,
-  DEAR_DATA,
+  // DEAR_DATA,
   // LIGHT_HOUSE_MAP,
   // GOETHE,
 
