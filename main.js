@@ -19,6 +19,12 @@ const DALLE_STUFF = [
   'dalle-logo-2',
   'dalle-logo-3',
   'dalle-logo-4',
+  'ai-image-1',
+  'ai-image-2',
+  'ai-image-3',
+  'ai-image-4',
+  'ai-image-5',
+  'ai-image-6',
 ].map(x => ({  url:
     `https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/${x}.png`,
   timeToDisplay: 0.75 * MINUTE,
