@@ -237,6 +237,13 @@ const SPIN_LAMBDA = {
   type: 'video'
 };
 
+const OMEGA_COMB = {
+  url:
+    'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/omega-comb.mov',
+  timeToDisplay: 53 * SECOND,
+  type: 'video'
+};
+
 const addresses = [
   // LIVE STREAMS
   // JELLY_FISH,
@@ -290,6 +297,7 @@ const addresses = [
   // tacoThing,
   // visZines
   SPIN_LAMBDA,
+  OMEGA_COMB,
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
