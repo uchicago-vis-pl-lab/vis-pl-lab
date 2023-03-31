@@ -105,16 +105,16 @@ const DEIDEROT_PARTICLES = {
   type: 'video'
 };
 
-
+const rand = () => Math.floor(Math.random() * 21000);
 const KELP = {
-  url: `https://www.youtube.com/embed/sSbABWGgRh0?rel=0;&autoplay=1&mute=1&start=${rand(110 * MINUTE)}`,
+  url: `https://www.youtube.com/embed/sSbABWGgRh0?rel=0;&autoplay=1&mute=1`,
   timeToDisplay: 8 * MINUTE,
   type: 'page'
 };
 
 const SHRIMPLICITY = {
-  url: `https://www.youtube.com/embed/UXWckTAw3JY?rel=0;&autoplay=1&mute=1&start=${RANDOM_OFFSET}`,
-  timeToDisplay: 8 * MINUTE,
+  url: `https://www.youtube.com/embed/UXWckTAw3JY?rel=0;&autoplay=1&mute=1`,
+  timeToDisplay: 12 * MINUTE,
   type: 'page'
 };
 const BEARS = {
