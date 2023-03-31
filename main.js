@@ -105,9 +105,16 @@ const DEIDEROT_PARTICLES = {
   type: 'video'
 };
 
-const JELLY_FISH = {
-  url: 'https://www.youtube.com/embed/vYvwnTEYRsc?rel=0;&autoplay=1&mute=1',
-  timeToDisplay: 2 * MINUTE,
+
+const KELP = {
+  url: `https://www.youtube.com/embed/sSbABWGgRh0?rel=0;&autoplay=1&mute=1&start=${rand(110 * MINUTE)}`,
+  timeToDisplay: 8 * MINUTE,
+  type: 'page'
+};
+
+const SHRIMPLICITY = {
+  url: `https://www.youtube.com/embed/UXWckTAw3JY?rel=0;&autoplay=1&mute=1&start=${RANDOM_OFFSET}`,
+  timeToDisplay: 8 * MINUTE,
   type: 'page'
 };
 const BEARS = {
@@ -248,17 +255,19 @@ const addresses = [
   // LIVE STREAMS
   // JELLY_FISH,
   // BEARS,
+  KELP,
+  SHRIMPLICITY,
 
   // MEMES OR PSUEDOMMEMES
   // ...COLORS_OF_THE_YEAR,
   BAD_GOVERNMENT,
   // BALLOONS,
   // BUFFALO_2,
-  BUFFALO,
-  LLVM_ART,
+  // BUFFALO,
+  // LLVM_ART,
   // KNIGHTS_TOUR,
   // // BUTTERFLY_CHART,
-  FIRE_PLACE,
+  // FIRE_PLACE,
   // ...AIR_LINE_SAFTY_VIDEOS,
   ...TRAIN_LINES,
   ...DALLE_STUFF,
