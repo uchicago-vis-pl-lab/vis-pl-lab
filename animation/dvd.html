@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- Doc
+
+  usage: ./dvd.html?<modes><params>
+
+  <mode>
+    : bounce=<any value>
+    | spinX=<any value>
+    | spinY=<any value>
+    | spinZ=<any value>
+    | spinSpeed=<n measured in degrees>
+    | bounceSpeed=<n measured in pixels>
+    ;
+
+  <params>
+    : image=<image-url>
+    | text=<text>(&font=<font-name>)
+    ;
+-->
+<html>
+  <head>
+    <title>DVD Bounce</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./dvd.css">
+  </head>
+  <body>
+    <div id="background">
+      <div id="dvd"></div>
+    </div>
+    <script src="./dvd.js"></script>
+  </body>
+</html>

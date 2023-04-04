@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#background {
+  height: 100vh;
+  width: 100vw;
+  background-color: #111;
+}
+
+#dvd {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100px;
+  width: auto;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-size: 75px;
+  background-position: center;
+}
