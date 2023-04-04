@@ -19,7 +19,6 @@ function newColor() {
   currentPallete.splice(currentColorIndex, 1);
   const random = Math.floor(Math.random() * currentPallete.length);
   currentColorIndex = random < currentColorIndex ? random : random + 1;
-  console.log(random, currentPallete[random]);
   return currentPallete[random];
 }
 
