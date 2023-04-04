@@ -1,5 +1,6 @@
 /******** PARAMETERS ************/
-const pallete = ["#ff8800", "#e124ff", "#6a19ff", "#ff2188"];
+const pallete = ["#ff8800", "#e124ff", "#6a19ff", "#ff2188", "#5faa91",
+                 "#59a9c0", "#90df84", "#5c58c7", "#6dc2e5", "#a0df6b"];
 
 let bouncing = false;
 let spinningX = false;
@@ -18,6 +19,7 @@ function newColor() {
   currentPallete.splice(currentColorIndex, 1);
   const random = Math.floor(Math.random() * currentPallete.length);
   currentColorIndex = random < currentColorIndex ? random : random + 1;
+  console.log(random, currentPallete[random]);
   return currentPallete[random];
 }
 
@@ -35,12 +37,12 @@ function bounce() {
   const screenHeight = document.body.clientHeight;
   const screenWidth = document.body.clientWidth;
 
-  if (y < 0 || y + dvdHeight >= screenHeight) {
+  if (y < 0 || y + dvdHeight > screenHeight) {
     dirY *= -1;
     dvd.style.backgroundColor = newColor();
   }
 
-  if (x < 0 || x + dvdWidth >= screenWidth) {
+  if (x < 0 || x + dvdWidth > screenWidth) {
     dirX *= -1;
     dvd.style.backgroundColor = newColor();
   }
