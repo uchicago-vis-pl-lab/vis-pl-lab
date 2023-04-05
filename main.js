@@ -255,7 +255,7 @@ const SMLNJ_LOGO = {
   url: './animation/dvd.html',
   params: {
     'image':
-      'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/smlnj-logo.png',
+      '../assets/smlnj-logo.png',
     'bounce': true
   },
   timeToDisplay: 5 * MINUTE,
