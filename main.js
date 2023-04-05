@@ -263,62 +263,62 @@ const SMLNJ_LOGO = {
 };
 
 const addresses = [
-  // // LIVE STREAMS
-  // // JELLY_FISH,
-  // // BEARS,
-  // KELP,
-  // SHRIMPLICITY,
+  // LIVE STREAMS
+  // JELLY_FISH,
+  // BEARS,
+  KELP,
+  SHRIMPLICITY,
 
-  // // MEMES OR PSUEDOMMEMES
-  // // ...COLORS_OF_THE_YEAR,
-  // BAD_GOVERNMENT,
-  // // BALLOONS,
-  // // BUFFALO_2,
-  // // BUFFALO,
-  // // LLVM_ART,
-  // // KNIGHTS_TOUR,
-  // // // BUTTERFLY_CHART,
-  // // FIRE_PLACE,
-  // // ...AIR_LINE_SAFTY_VIDEOS,
-  // ...TRAIN_LINES,
-  // ...DALLE_STUFF,
+  // MEMES OR PSUEDOMMEMES
+  // ...COLORS_OF_THE_YEAR,
+  BAD_GOVERNMENT,
+  // BALLOONS,
+  // BUFFALO_2,
+  // BUFFALO,
+  // LLVM_ART,
+  // KNIGHTS_TOUR,
+  // // BUTTERFLY_CHART,
+  // FIRE_PLACE,
+  // ...AIR_LINE_SAFTY_VIDEOS,
+  ...TRAIN_LINES,
+  ...DALLE_STUFF,
 
-  // // WEATHER THINGS
-  // // LIVE_WEATHER,
-  // WEATHER_CHANNEL_AD,
+  // WEATHER THINGS
+  // LIVE_WEATHER,
+  WEATHER_CHANNEL_AD,
 
-  // // CAT PICS?
-  // // CAT_DRINKING_WATER,
-  // // CODE_FUZZER,
+  // CAT PICS?
+  // CAT_DRINKING_WATER,
+  // CODE_FUZZER,
 
-  // // DATA VIS + PROJECTS
-  // // VIS_READING_GROUP_POSTER,
-  // // FORUM_EXPLORER,
-  // // TABLE_CARTOGRAM,
-  // // DEAR_DATA,
-  // // LIGHT_HOUSE_MAP,
-  // // GOETHE,
+  // DATA VIS + PROJECTS
+  // VIS_READING_GROUP_POSTER,
+  // FORUM_EXPLORER,
+  // TABLE_CARTOGRAM,
+  // DEAR_DATA,
+  // LIGHT_HOUSE_MAP,
+  // GOETHE,
 
-  // // PLRG + PROJECTS
-  // // PLRG_POSTER,
-  // // LONG_SKETCH_AND_SKETCH,
-  // // FOURMIN_SKETCH_AND_SKETCH,
+  // PLRG + PROJECTS
+  // PLRG_POSTER,
+  // LONG_SKETCH_AND_SKETCH,
+  // FOURMIN_SKETCH_AND_SKETCH,
 
-  // // SCI VIS THINGS
-  // // TEO_SCI_VIS_1,
-  // // TEO_SCI_VIS_2,
-  // // TEO_SCI_VIS_3,
-  // // TEO_SCI_VIS_4,
-  // // TEO_SCI_VIS_5,
-  // // DEIDEROT_PARTICLES,
+  // SCI VIS THINGS
+  // TEO_SCI_VIS_1,
+  // TEO_SCI_VIS_2,
+  // TEO_SCI_VIS_3,
+  // TEO_SCI_VIS_4,
+  // TEO_SCI_VIS_5,
+  // DEIDEROT_PARTICLES,
 
-  // // some recent papers
-  // // uist21,
-  // // tacoThing,
-  // // visZines
-  // SPIN_LAMBDA,
-  // OMEGA_COMB,
-  SMLNJ_LOGO,
+  // some recent papers
+  // uist21,
+  // tacoThing,
+  // visZines
+  SPIN_LAMBDA,
+  OMEGA_COMB,
+  // SMLNJ_LOGO,
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
