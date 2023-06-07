@@ -316,8 +316,8 @@ const addresses = [
   // uist21,
   // tacoThing,
   // visZines
-  SPIN_LAMBDA,
-  OMEGA_COMB,
+  // SPIN_LAMBDA,
+  // OMEGA_COMB,
   // SMLNJ_LOGO,
 ];
 
