@@ -362,8 +362,8 @@ refreshIfNeeded();
 let idx = Math.floor(Math.random() * addresses.length);
 const slider = document.getElementById('progress-bar-foreground');
 function setPage() {
-  // const nextAddress = addresses[Math.floor(Math.random() * addresses.length)];
-  const nextAddress = addresses[idx];
+  const nextAddress = addresses[Math.floor(Math.random() * addresses.length)];
+  // const nextAddress = addresses[idx];
   // preemptively deactivate everything
   const frame = document.getElementById('content-frame');
   const picHolder = document.getElementById('pic-holder');
