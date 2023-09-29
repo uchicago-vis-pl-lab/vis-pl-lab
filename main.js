@@ -45,6 +45,12 @@ const WEATHER_CHANNEL_AD = {
   type: 'page'
 };
 
+const ULTRA_GRAPHIX_ULTRA_AD = {
+  url: 'https://www.youtube.com/embed/6gvu5G_5Hq4?rel=0;&autoplay=1&mute=1',
+  timeToDisplay: 1 * MINUTE + 31 * SECOND,
+  type: 'page'
+};
+
 const BUFFALO = {
   url: 'https://www.youtube.com/embed/8oGcbN3Me7Y?rel=0;&autoplay=1&mute=1',
   timeToDisplay: 2 * MINUTE,
@@ -286,6 +292,7 @@ const addresses = [
   // WEATHER THINGS
   // LIVE_WEATHER,
   WEATHER_CHANNEL_AD,
+  ULTRA_GRAPHIX_ULTRA_AD,
 
   // CAT PICS?
   // CAT_DRINKING_WATER,
@@ -316,9 +323,11 @@ const addresses = [
   // uist21,
   // tacoThing,
   // visZines
+
+  // Stupid PL things
   // SPIN_LAMBDA,
-  // OMEGA_COMB,
-  // SMLNJ_LOGO,
+  OMEGA_COMB,
+  SMLNJ_LOGO,
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
