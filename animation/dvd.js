@@ -87,6 +87,7 @@ function initialize() {
   if (params.has('image')) {
     let image_url = params.get('image');
     dvd.style.maskImage = "url('" + image_url + "')";
+    dvd.style.webkitMaskImage = "url('" + image_url + "')";
 
     let placeholder = document.createElement('img');
     placeholder.src = image_url;

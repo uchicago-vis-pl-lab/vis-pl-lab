@@ -17,6 +17,7 @@ body {
   height: 100px;
   width: auto;
   mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
   mask-size: contain;
   color: transparent;
   background-repeat: no-repeat;
