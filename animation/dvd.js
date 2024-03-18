@@ -87,8 +87,12 @@ function initialize() {
   if (params.has('image')) {
     let image_url = params.get('image');
     dvd.style.maskImage = "url('" + image_url + "')";
-    dvd.style.webkitMaskImage = "url('" + image_url + "')";
+    dvd.style.webkitMaskImage = "url(" + image_url + ")";
+    dvd.style.webkitMaskType = "alpha";
+    dvd.style.webkitMaskPosition = "center";
+    dvd.style.webkitMaskSize = "100% auto";
 
+    // placeholder is here to make sure the box is the same size as the image
     let placeholder = document.createElement('img');
     placeholder.src = image_url;
     placeholder.style.height = dvd.clientHeight + 'px';
