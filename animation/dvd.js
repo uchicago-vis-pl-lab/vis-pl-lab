@@ -1,6 +1,8 @@
 /******** PARAMETERS ************/
 const pallete = ["#ff8800", "#e124ff", "#6a19ff", "#ff2188", "#5faa91",
-                 "#59a9c0", "#90df84", "#5c58c7", "#6dc2e5", "#a0df6b"];
+                 "#59a9c0", "#90df84", "#5c58c7", "#6dc2e5", "#a0df6b",
+                 "#e94025", "#4deeea", "#74ee15", "#ffe700", "#f000ff",
+                 "#001eff"];
 
 let bouncing = false;
 let spinningX = false;
