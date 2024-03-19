@@ -277,7 +277,7 @@ const SMLNJ_LOGO = {
 
 const BOUNCING_BALLS = {
   url: './animation/bouncing-balls/bouncing-balls.html',
-  timeToDisplay: 30 * SECOND,
+  timeToDisplay: 2 * MINUTE,
   type: 'animation'
 };
 

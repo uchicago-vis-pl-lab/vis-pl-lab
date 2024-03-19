@@ -7,7 +7,7 @@ function newColor() {
 }
 
 function newEye(x, y) {
-  const d = random(20, 40);
+  const d = random(40, 60);
   return {
     x, y,  // position
     vx: 0, // velocity
@@ -283,7 +283,7 @@ function draw() {
   }
 
   // potentially spawn some new eyes
-  if(random() < 0.1 && eyes.length < 100) {
+  if(random() < 0.01 && eyes.length < 100) {
     const eyeX = random(10, width - 10);
     eyes.push(newEye(eyeX, -50));
   }
