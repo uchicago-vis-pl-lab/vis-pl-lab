@@ -265,10 +265,10 @@ const OMEGA_COMB = {
 };
 
 const SMLNJ_LOGO = {
-  url: './animation/dvd.html',
+  url: './animation/dvd/dvd.html',
   params: {
     'image':
-      '../assets/smlnj-logo.png',
+      '../../assets/smlnj-logo.png',
     'bounce': true
   },
   timeToDisplay: 5 * MINUTE,
