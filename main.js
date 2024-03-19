@@ -275,6 +275,12 @@ const SMLNJ_LOGO = {
   type: 'animation'
 };
 
+const BOUNCING_BALLS = {
+  url: './animation/bouncing-balls/bouncing-balls.html',
+  timeToDisplay: 30 * SECOND,
+  type: 'animation'
+};
+
 const addresses = [
   // LIVE STREAMS
   // JELLY_FISH,
@@ -336,6 +342,7 @@ const addresses = [
   // SPIN_LAMBDA,
   OMEGA_COMB,
   SMLNJ_LOGO,
+  BOUNCING_BALLS
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
