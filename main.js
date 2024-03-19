@@ -123,6 +123,13 @@ const SHRIMPLICITY = {
   timeToDisplay: 12 * MINUTE,
   type: 'page'
 };
+
+const UNDER_THE_WHARF = {
+  url: `https://www.youtube.com/embed/AMbXQrepwXQ?rel=0;&autoplay=1&mute=1`,
+  timeToDisplay: 10 * MINUTE,
+  type: 'page'
+};
+
 const BEARS = {
   // note: the stuff after the ? enables the live-stream
   url: 'https://www.youtube.com/embed/qWlU7hWEl8c?rel=0;&autoplay=1&mute=1',
@@ -287,7 +294,7 @@ const addresses = [
   // FIRE_PLACE,
   // ...AIR_LINE_SAFTY_VIDEOS,
   ...TRAIN_LINES,
-  ...DALLE_STUFF,
+  // ...DALLE_STUFF,
 
   // WEATHER THINGS
   // LIVE_WEATHER,
