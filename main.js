@@ -272,12 +272,12 @@ const addresses = [
   // LIVE STREAMS
   // JELLY_FISH,
   // BEARS,
-  // KELP,
-  // SHRIMPLICITY,
+  KELP,
+  SHRIMPLICITY,
 
   // MEMES OR PSUEDOMMEMES
   // ...COLORS_OF_THE_YEAR,
-  // BAD_GOVERNMENT,
+  BAD_GOVERNMENT,
   // BALLOONS,
   // BUFFALO_2,
   // BUFFALO,
@@ -286,13 +286,13 @@ const addresses = [
   // // BUTTERFLY_CHART,
   // FIRE_PLACE,
   // ...AIR_LINE_SAFTY_VIDEOS,
-  // ...TRAIN_LINES,
-  // ...DALLE_STUFF,
+  ...TRAIN_LINES,
+  ...DALLE_STUFF,
 
   // WEATHER THINGS
   // LIVE_WEATHER,
-  // WEATHER_CHANNEL_AD,
-  // ULTRA_GRAPHIX_ULTRA_AD,
+  WEATHER_CHANNEL_AD,
+  ULTRA_GRAPHIX_ULTRA_AD,
 
   // CAT PICS?
   // CAT_DRINKING_WATER,
@@ -326,7 +326,7 @@ const addresses = [
 
   // Stupid PL things
   // SPIN_LAMBDA,
-  // OMEGA_COMB,
+  OMEGA_COMB,
   SMLNJ_LOGO,
 ];
 
