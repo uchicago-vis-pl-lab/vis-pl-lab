@@ -75,3 +75,14 @@ iframe,
   transition: left 0.1s;
   width: 100%;
 }
+
+#debug-text {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-family: monospace;
+    text-shadow: black 1px 0 1px,
+                 black 0 1px 1px,
+                 black -1px 0 1px,
+                 black 0 -1px 1px
+}

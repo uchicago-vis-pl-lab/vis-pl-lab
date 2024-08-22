@@ -42,13 +42,15 @@ const FORUM_EXPLORER = {
 const WEATHER_CHANNEL_AD = {
   url: 'https://www.youtube.com/embed/X05DrscHFZQ?rel=0;&autoplay=1&mute=1',
   timeToDisplay: 7 * MINUTE + 20 * SECOND,
-  type: 'page'
+  type: 'page',
+  description: 'Weather Channel',
 };
 
 const ULTRA_GRAPHIX_ULTRA_AD = {
   url: 'https://www.youtube.com/embed/6gvu5G_5Hq4?rel=0;&autoplay=1&mute=1',
   timeToDisplay: 1 * MINUTE + 31 * SECOND,
-  type: 'page'
+  type: 'page',
+  description: 'Ultra Graphix Ultra',
 };
 
 const BUFFALO = {
@@ -67,23 +69,25 @@ const RANDOM_OFFSET = Math.floor(Math.random() * 21000);
 const BAD_GOVERNMENT = {
   url: `https://www.youtube.com/embed/kY9P7ruzOy4?rel=0;&autoplay=1&mute=1&start=${RANDOM_OFFSET}`,
   timeToDisplay: 1.0 * MINUTE,
-  type: 'page'
+  type: 'page',
+  description: 'Bad Government'
 };
 
-function prepYouTube({link, time}) {
+function prepYouTube({link, time, description}) {
   return {
     url: `https://www.youtube.com/embed/${link}?rel=0;&autoplay=1&mute=1`,
     timeToDisplay: time,
-    type: 'page'
+    type: 'page',
+    description,
   };
 }
 
 const TRAIN_LINES = [
   // {link: 'PPbTYFAFAic', time: 4.0 * MINUTE, color: 'CALIFORNIA'},
-  {link: 'm9geCp5I0Ho', time: MINUTE * 16 + SECOND * 49, color: 'purple'},
+  {link: 'm9geCp5I0Ho', time: MINUTE * 16 + SECOND * 49, color: 'purple', description: 'Purple Line' },
   // {link: '6bU5n93Jp1k', time: MINUTE * 11 + SECOND * 28, color: 'brown'}
   // {link: 'RHTUDwud5Ag', time: MINUTE * 13 + SECOND * 22, color: 'blue'},
-  {link: 'YygD5TDWbBI', time: MINUTE * 3 + SECOND * 50, color: 'yellow'},
+  {link: 'YygD5TDWbBI', time: MINUTE * 3 + SECOND * 50, color: 'yellow', description: 'Yellow Line'},
   // {link: 'Wseu1CTuxrs', time: MINUTE * 10, color: 'red'}
 ]
   .map(prepYouTube)
@@ -115,19 +119,22 @@ const rand = () => Math.floor(Math.random() * 21000);
 const KELP = {
   url: `https://www.youtube.com/embed/sSbABWGgRh0?rel=0;&autoplay=1&mute=1`,
   timeToDisplay: 8 * MINUTE,
-  type: 'page'
+  type: 'page',
+  description: 'Kelp',
 };
 
 const SHRIMPLICITY = {
   url: `https://www.youtube.com/embed/UXWckTAw3JY?rel=0;&autoplay=1&mute=1`,
   timeToDisplay: 12 * MINUTE,
-  type: 'page'
+  type: 'page',
+  description: 'Shrimplicity',
 };
 
 const UNDER_THE_WHARF = {
   url: `https://www.youtube.com/embed/AMbXQrepwXQ?rel=0;&autoplay=1&mute=1`,
   timeToDisplay: 10 * MINUTE,
-  type: 'page'
+  type: 'page',
+  description: 'Under the Wharf',
 };
 
 const BEARS = {
@@ -261,7 +268,8 @@ const OMEGA_COMB = {
   url:
     'https://github.com/uchicago-vis-pl-lab/vis-pl-lab/raw/master/assets/omega-comb.mov',
   timeToDisplay: 53 * SECOND,
-  type: 'video'
+  type: 'video',
+  description: 'Omega Combinator',
 };
 
 const SMLNJ_LOGO = {
@@ -272,13 +280,15 @@ const SMLNJ_LOGO = {
     'bounce': true
   },
   timeToDisplay: 5 * MINUTE,
-  type: 'animation'
+  type: 'animation',
+  description: 'SMLNJ Logo',
 };
 
 const BOUNCING_BALLS = {
   url: './animation/bouncing-balls/bouncing-balls.html',
   timeToDisplay: 2 * MINUTE,
-  type: 'animation'
+  type: 'animation',
+  description: 'Bouncing Balls',
 };
 
 const addresses = [
@@ -392,11 +402,13 @@ function setPage() {
   const frame = document.getElementById('content-frame');
   const picHolder = document.getElementById('pic-holder');
   const videoHolder = document.getElementById('video-holder');
+  const debugText = document.getElementById('debug-text');
   frame.setAttribute('src', '');
   videoHolder.setAttribute('src', '');
   frame.setAttribute('class', 'hide-holder');
   picHolder.setAttribute('class', 'hide-holder');
   videoHolder.setAttribute('class', 'hide-holder');
+  debugText.innerText = nextAddress.description ?? "No description";
 
   switch (nextAddress.type) {
     default:
@@ -436,3 +448,21 @@ function setPage() {
   }, nextAddress.timeToDisplay);
 }
 setPage();
+
+
+(function () {
+  // Debug text blinker.
+  const debugText = document.getElementById('debug-text');
+
+  function blinkOn() {
+    debugText.style.display = "block";
+    setTimeout(blinkOff, 2000);
+  }
+
+  function blinkOff() {
+    setTimeout(blinkOn, 15000);
+    debugText.style.display = "none";
+  }
+
+  blinkOn();
+})();
