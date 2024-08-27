@@ -297,7 +297,7 @@ const addresses = [
   // BEARS,
   KELP,
   SHRIMPLICITY,
-  UNDER_THE_WHARF,
+  // UNDER_THE_WHARF, // ads?
 
   // MEMES OR PSUEDOMMEMES
   // ...COLORS_OF_THE_YEAR,
