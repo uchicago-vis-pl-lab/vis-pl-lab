@@ -93,6 +93,22 @@ const TRAIN_LINES = [
   .map(prepYouTube)
   .filter(() => Math.random() > 0.5);
 
+const TRAIN_LINES_REUPLOAD = [
+  {link: '1107863638', time: 1.0 * MINUTE + 40.0 * SECOND, description: 'Yellow Line (Chunk 1)'},
+  {link: '1107863537', time: 1.0 * MINUTE + 50.0 * SECOND, description: 'Purple Line (Chunk 6)'},
+  {link: '1107863024', time: 2.0 * MINUTE, description: 'Purple Line (Chunk 4)'},
+]
+  .map(prepVimeo);
+
+function prepVimeo({link, time, description}) {
+  return {
+    url: `https://player.vimeo.com/video/${link}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1`,
+    timeToDisplay: time,
+    type: 'page',
+    description
+  }
+}
+
 const COLORS_OF_THE_YEAR = [
   // {link: 'TSCN_-gIbVg', time: 1 * MINUTE + 17 * SECOND, color: 'blue'},
   // {link: '8zC75u81VKg', time: 1 * MINUTE + 9 * SECOND, color: 'greenery'}
@@ -311,6 +327,7 @@ const addresses = [
   // FIRE_PLACE,
   // ...AIR_LINE_SAFTY_VIDEOS,
   // ...TRAIN_LINES,
+  ...TRAIN_LINES_REUPLOAD,
   // ...DALLE_STUFF,
 
   // WEATHER THINGS
