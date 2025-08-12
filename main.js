@@ -146,6 +146,12 @@ const SHRIMPLICITY = {
   description: 'Shrimplicity',
 };
 
+const SHRIMPLICITY_REUPLOAD = [
+  {link: '1109435786', time: 2.0 * MINUTE, description: 'Shrimplicity (Chunk 0)'},
+  {link: '1109435680', time: 2.0 * MINUTE, description: 'Shrimplicity (Chunk 28)'},
+]
+  .map(prepVimeo);
+
 const UNDER_THE_WHARF = {
   url: `https://www.youtube.com/embed/AMbXQrepwXQ?rel=0;&autoplay=1&mute=1`,
   timeToDisplay: 10 * MINUTE,
@@ -313,6 +319,7 @@ const addresses = [
   // BEARS,
   // KELP,
   // SHRIMPLICITY,
+  ...SHRIMPLICITY_REUPLOAD,
   // UNDER_THE_WHARF, // ads?
 
   // MEMES OR PSUEDOMMEMES
