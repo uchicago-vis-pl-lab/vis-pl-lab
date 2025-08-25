@@ -313,6 +313,36 @@ const BOUNCING_BALLS = {
   description: 'Bouncing Balls',
 };
 
+const LIFE_GUN_DESTRUCTION = {
+  url: './animation/life/life.html',
+  params: {
+    'world': 'worlds/gun-destruction.cells',
+  },
+  timeToDisplay: 20 * SECOND,
+  type: 'animation',
+  description: 'Game of Life: glider gun destruction',
+};
+
+const LIFE_GOSPER_GUN = {
+  url: './animation/life/life.html',
+  params: {
+    'world': 'worlds/gosper-glider-gun.cells',
+  },
+  timeToDisplay: 2 * MINUTE,
+  type: 'animation',
+  description: 'Game of Life: Gosper\'s glider gun',
+};
+
+const LIFE_PERIOD690 = {
+  url: './animation/life/life.html',
+  params: {
+    'world': 'worlds/period690-glider-gun.cells',
+  },
+  timeToDisplay: 2 * MINUTE,
+  type: 'animation',
+  description: 'Game of Life: period 690 gun',
+};
+
 const addresses = [
   // LIVE STREAMS
   // JELLY_FISH,
@@ -377,6 +407,9 @@ const addresses = [
   OMEGA_COMB,
   SMLNJ_LOGO,
   BOUNCING_BALLS
+  LIFE_GUN_DESTRUCTION,
+  LIFE_GOSPER_GUN,
+  LIFE_PERIOD690,
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
