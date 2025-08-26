@@ -343,6 +343,17 @@ const LIFE_PERIOD690 = {
   description: 'Game of Life: period 690 gun',
 };
 
+const LIFE_BREEDER1 = {
+  url: './animation/life/life.html',
+  params: {
+    'world': 'worlds/breeder1.cells',
+    'zoom': 1.25,
+  },
+  timeToDisplay: 2 * MINUTE,
+  type: 'animation',
+  description: 'Game of Life: breeder 1',
+};
+
 const addresses = [
   // LIVE STREAMS
   // JELLY_FISH,
@@ -410,6 +421,7 @@ const addresses = [
   LIFE_GUN_DESTRUCTION,
   LIFE_GOSPER_GUN,
   LIFE_PERIOD690,
+  LIFE_BREEDER1,
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
