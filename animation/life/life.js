@@ -111,7 +111,7 @@ class World {
 }
 
 class Scene {
-  static async load(canvas, path) {
+  static async load(canvas, path, zoom) {
     const {width, height, lines} = await Scene.fetchfile(path);
 
     // display twice the size of the bounding box
@@ -148,6 +148,10 @@ class Scene {
         }
       }
     }
+
+    displayWidth  = Math.ceil(width  * zoom);
+    displayHeight = Math.ceil(height * zoom);
+
     return new Scene(world, canvas, displayWidth, displayHeight);
   }
 
@@ -183,8 +187,6 @@ class Scene {
     const colOffset = Math.floor((this.world.width - this.displayWidth) / 2);
     const rowOffset = Math.floor((this.world.height - this.displayHeight) / 2);
 
-    console.log(gap, cell, colOffset, rowOffset);
-    console.log(this.world.width, this.displayWidth, this.world.height, this.displayHeight);
     this.gap = gap;
     this.cell = cell;
     this.displayColOffset = colOffset;
@@ -226,13 +228,18 @@ async function init() {
   canvas.height = window.innerHeight;
 
   let params = (new URL(document.location)).searchParams;
-  let worldpath;
+  let worldpath, factor;
   if (params.has('world')) {
     worldpath = params.get('world');
   } else {
     worldpath = 'worlds/gun-destruction.cells';
   }
-  scene = await Scene.load(canvas, worldpath);
+  if (params.has('zoom')) {
+    factor = params.get('zoom');
+  } else {
+    factor = 2;
+  }
+  scene = await Scene.load(canvas, worldpath, factor);
   window.requestAnimationFrame(firstFrame);
 }
 
