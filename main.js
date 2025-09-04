@@ -301,7 +301,7 @@ const SMLNJ_LOGO = {
       '../../assets/smlnj-logo.png',
     'bounce': true
   },
-  timeToDisplay: 5 * MINUTE,
+  timeToDisplay: 2 * MINUTE,
   type: 'animation',
   description: 'SMLNJ Logo',
 };
