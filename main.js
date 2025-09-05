@@ -349,9 +349,16 @@ const LIFE_BREEDER1 = {
     'world': 'worlds/breeder1.cells',
     'zoom': 1.25,
   },
-  timeToDisplay: 2 * MINUTE,
+  timeToDisplay: 4 * MINUTE,
   type: 'animation',
   description: 'Game of Life: breeder 1',
+};
+
+const CLOTH1 = {
+  url: './animation/cloth/index.html',
+  timeToDisplay: 5 * MINUTE,
+  type: 'animation',
+  description: 'Cloth 1',
 };
 
 const addresses = [
@@ -417,11 +424,14 @@ const addresses = [
   // SPIN_LAMBDA,
   OMEGA_COMB,
   SMLNJ_LOGO,
+
+  // Tree burners
   BOUNCING_BALLS,
   LIFE_GUN_DESTRUCTION,
   LIFE_GOSPER_GUN,
   LIFE_PERIOD690,
   LIFE_BREEDER1,
+  CLOTH1,
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
