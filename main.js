@@ -486,11 +486,42 @@ function refreshIfNeeded() {
 // Load up the initial version to compare against.
 refreshIfNeeded();
 
-let idx = Math.floor(Math.random() * addresses.length);
+function makeSchedule() {
+  const avail = [...addresses];
+  const sched = [];
+  while(avail.length > 0) {
+    const idx = Math.floor(Math.random() * avail.length);
+    sched.push(avail.splice(idx, 1)[0]);
+  }
+  return sched;
+}
+
+const [getNextAddress, getNextUp] = (function () {
+  let q = [];
+
+  const ensureAtLeast1 = () => {
+    if(q.length < 1) {
+      q.push(...makeSchedule());
+    }
+  };
+
+  return [
+    () => {
+      ensureAtLeast1();
+      return q.shift();
+    },
+    () => {
+      ensureAtLeast1();
+      return q[0];
+    }
+  ];
+}());
+
 const slider = document.getElementById('progress-bar-foreground');
 function setPage() {
-  const nextAddress = addresses[Math.floor(Math.random() * addresses.length)];
-  // const nextAddress = addresses[idx];
+  const nextAddress = getNextAddress();
+  const nextUp = getNextUp();
+
   // preemptively deactivate everything
   const frame = document.getElementById('content-frame');
   const picHolder = document.getElementById('pic-holder');
@@ -501,7 +532,8 @@ function setPage() {
   frame.setAttribute('class', 'hide-holder');
   picHolder.setAttribute('class', 'hide-holder');
   videoHolder.setAttribute('class', 'hide-holder');
-  debugText.innerText = nextAddress.description ?? "No description";
+  debugText.innerHTML =
+    `Currently playing: ${nextAddress.description ?? "No description"}</br>Next up: ${nextUp.description ?? "No descriptionn"}`;
 
   switch (nextAddress.type) {
     default:
@@ -534,7 +566,6 @@ function setPage() {
     slider.setAttribute('style', `left: ${percentDone}%;`);
   }, updateSpeed);
   setTimeout(() => {
-    idx = (idx + 1) % addresses.length;
     clearInterval(updater);
     slider.setAttribute('style', 'left: 0;');
     setPage();
