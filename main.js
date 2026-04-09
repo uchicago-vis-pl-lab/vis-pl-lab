@@ -102,7 +102,7 @@ const TRAIN_LINES_REUPLOAD = [
 
 function prepVimeo({link, time, description}) {
   return {
-    url: `https://player.vimeo.com/video/${link}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1`,
+    url: `https://player.vimeo.com/video/${link}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&texttrack=en`,
     timeToDisplay: time,
     type: 'page',
     description
@@ -361,6 +361,18 @@ const CLOTH1 = {
   description: 'Cloth 1',
 };
 
+const GRIDLOCK = prepVimeo({
+    link: '1181646780',
+    time: 3.0 * MINUTE + 23.0 * SECOND,
+    description: 'Gridlock'
+});
+
+const ROCKS = prepVimeo({
+    link: '1181646968',
+    time: 30.0 * SECOND,
+    description: 'Rocks'
+});
+
 const addresses = [
   // LIVE STREAMS
   // JELLY_FISH,
@@ -401,6 +413,8 @@ const addresses = [
   // DEAR_DATA,
   // LIGHT_HOUSE_MAP,
   // GOETHE,
+  ROCKS,
+  GRIDLOCK,
 
   // PLRG + PROJECTS
   // PLRG_POSTER,
