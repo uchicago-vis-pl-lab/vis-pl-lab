@@ -361,6 +361,13 @@ const CLOTH1 = {
   description: 'Cloth 1',
 };
 
+const WINDCHIME = {
+  url: './animation/windchime/index.html',
+  timeToDisplay: 5 * MINUTE,
+  type: 'animation',
+  description: 'Wind Chime',
+};
+
 const GRIDLOCK = prepVimeo({
     link: '1181646780',
     time: 3.0 * MINUTE + 23.0 * SECOND,
@@ -446,6 +453,7 @@ const addresses = [
   LIFE_PERIOD690,
   LIFE_BREEDER1,
   CLOTH1,
+  WINDCHIME,
 ];
 
 const pagesToCheckBase = ['index.html', 'main.css', 'main.js'];
