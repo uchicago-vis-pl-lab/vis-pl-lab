@@ -294,6 +294,16 @@ const OMEGA_COMB = {
   description: 'Omega Combinator',
 };
 
+const RANDOM_REDUCTIONS = {
+  url: './animation/lambda/index.html',
+  params: {
+    'size': 10,
+  },
+  timeToDisplay: 3 * MINUTE,
+  type: 'animation',
+  description: 'Random Reductions',
+};
+
 const SMLNJ_LOGO = {
   url: './animation/dvd/dvd.html',
   params: {
@@ -445,6 +455,7 @@ const addresses = [
   // SPIN_LAMBDA,
   OMEGA_COMB,
   SMLNJ_LOGO,
+  RANDOM_REDUCTIONS,
 
   // Tree burners
   BOUNCING_BALLS,
