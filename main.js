@@ -297,7 +297,7 @@ const OMEGA_COMB = {
 const RANDOM_REDUCTIONS = {
   url: './animation/lambda/index.html',
   params: {
-    'size': 8,
+    'size': 5,
   },
   timeToDisplay: 3 * MINUTE,
   type: 'animation',

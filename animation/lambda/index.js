@@ -57,7 +57,7 @@ function easeOutExpo(x) {
  * @param ctx {CanvasRenderingContext2D}
  */
 function setupFontSettings(ctx) {
-  ctx.font = "64pt monospace";
+  ctx.font = "64pt serif";
   ctx.textBaseline = "top";
 }
 
@@ -219,10 +219,10 @@ const CREATION_DELETION_MOVE_AMOUNT = 8; //px;
 function drawInterpolatedLayout(ctx, interpolation, t, yOfs=0) {
   ctx.save();
   setupFontSettings(ctx);
+  ctx.fillStyle = "white";
 
   for(const word of interpolation.toCreate) {
-    let transparency = 1 - t;
-    ctx.fillStyle = `color-mix(in srgb, white, transparent ${Math.round(transparency * 100)}%)`;
+    ctx.globalAlpha = t;
     ctx.fillText(
       word.text,
       word.originX,
@@ -231,16 +231,15 @@ function drawInterpolatedLayout(ctx, interpolation, t, yOfs=0) {
   }
 
   for(const word of interpolation.toDelete) {
-    let transparency = t;
-    ctx.fillStyle = `color-mix(in srgb, white, transparent ${Math.round(transparency * 100)}%)`;
+    ctx.globalAlpha = 1 - t;
     ctx.fillText(
       word.text,
       word.originX,
       word.originY + yOfs + (t * CREATION_DELETION_MOVE_AMOUNT)
     );
   }
+  ctx.globalAlpha = 1;
 
-  ctx.fillStyle = "white";
   for(const [from, to] of interpolation.toInterp) {
     ctx.fillText(
       from.text,
@@ -382,7 +381,7 @@ function randomChoice(...ts) {
  * @returns {string}
  */
 function randomSymbol() {
-  return randomChoice("x", "y", "z", "w");
+  return randomChoice("x", "y", "z");
 }
 
 /**
@@ -395,8 +394,8 @@ function randomTerm(size) {
   } else {
     return randomChoice(
       () => mkVar({ id: FreshId.next() }, randomSymbol()),
-      () => mkApp({ id: FreshId.next(), }, randomTerm(size/2), randomTerm(size/2)),
-      () => mkAbs({ id: FreshId.next(), }, randomSymbol(), randomTerm(size/2)),
+      () => mkApp({ id: FreshId.next(), }, randomTerm(size-1), randomTerm(size-1)),
+      () => mkAbs({ id: FreshId.next(), }, randomSymbol(), randomTerm(size-1)),
     )();
   }
 }
