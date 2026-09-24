@@ -394,6 +394,7 @@ function randomTerm(size) {
     return mkVar({ id: FreshId.next() }, randomSymbol());
   } else {
     return randomChoice(
+      () => mkVar({ id: FreshId.next() }, randomSymbol()),
       () => mkApp({ id: FreshId.next(), }, randomTerm(size/2), randomTerm(size/2)),
       () => mkAbs({ id: FreshId.next(), }, randomSymbol(), randomTerm(size/2)),
     )();
@@ -507,6 +508,32 @@ function parseTerm(src) {
   return parseApp();
 }
 
+
+/**
+ * @template A
+ * @param a {Set<A>}
+ * @param b {Set<A>}
+ * @returns {Set<A>}
+ */
+function union(a, b) {
+  const out = new Set();
+  a.forEach(v => out.add(v));
+  b.forEach(v => out.add(v));
+  return out;
+}
+
+/**
+ * @template A
+ * @param a {Set<A>}
+ * @param b {Set<A>}
+ * @returns {Set<A>}
+ */
+function difference(a, b) {
+  const out = new Set([...a]);
+  b.forEach(v => out.delete(v));
+  return out;
+}
+
 /**
  * Find the set of free variables in a term.
  *
@@ -515,8 +542,8 @@ function parseTerm(src) {
  */
 function freeVars(tm) {
   switch(tm.type) {
-  case "Abs": return freeVars(tm.t1).difference(new Set([tm.alpha]))
-  case "App": return freeVars(tm.t1).union(freeVars(tm.t2));
+  case "Abs": return difference(freeVars(tm.t1), new Set([tm.alpha]));
+  case "App": return union(freeVars(tm.t1), freeVars(tm.t2));
   case "Var": return new Set([tm.nm]);
   default:
     throw new Error("boundVars");
@@ -531,8 +558,8 @@ function freeVars(tm) {
  */
 function vars(tm) {
   switch(tm.type) {
-  case "Abs": return vars(tm.t1).union(new Set([tm.alpha]))
-  case "App": return vars(tm.t1).union(vars(tm.t2));
+  case "Abs": return union(vars(tm.t1), new Set([tm.alpha]))
+  case "App": return union(vars(tm.t1), vars(tm.t2));
   case "Var": return new Set([tm.nm]);
   default:
     throw new Error("boundVars");
@@ -590,8 +617,14 @@ function* freshNames() {
  * @returns Abs
  */
 function renameAbs(tm, reserved) {
-  reserved = vars(tm).union(reserved);
-  const alpha = freshNames().find(name => !reserved.has(name));
+  reserved = union(vars(tm), reserved);
+  let alpha;
+  for(const candidate of freshNames()) {
+    if(!reserved.has(candidate)) {
+      alpha = candidate;
+      break;
+    }
+  }
   return mkAbs(
     tm,
     alpha,
@@ -643,7 +676,7 @@ function stepSubst(subst) {
         subst,
         subst.alpha,
         subst.forTm,
-        renameAbs(subst.inTm, fvs.union(new Set([subst.alpha])))
+        renameAbs(subst.inTm, union(fvs, new Set([subst.alpha])))
       );
     } else {
       // Continue down...
@@ -666,80 +699,90 @@ function stepSubst(subst) {
  */
 function termToWords(tm) {
   switch(tm.type) {
-  case "Abs": return [
-    {
+  case "Abs": {
+    const out = [{
       text: "\u03BB",
       id: `${tm.id}-0`
-    },
-    {
+    }, {
       text: tm.alpha,
       id: `${tm.id}-1`,
-    },
-    {
+    }, {
       text: ".",
       id: `${tm.id}-2`,
-    },
-    termToWords(tm.t1)
-  ].flat();
+    }];
+
+    out.push(...termToWords(tm.t1));
+    return out;
+  }
   case "Subst": {
     const rParens = tm.inTm.type === "App";
-    return [
-      {
-        text: "[",
-        id: `${tm.id}-0`,
-      },
-      {
-        text: tm.alpha,
-        id: `${tm.id}-1`,
-      },
-      {
-        text: "\u2192",
-        id: `${tm.id}-2`,
-      },
-      termToWords(tm.forTm),
-      {
-        text: "]",
-        id: `${tm.id}-3`,
-      },
-      rParens ? [{
+    const out = [{
+      text: "[",
+      id: `${tm.id}-0`
+    }, {
+      text: tm.alpha,
+      id: `${tm.id}-1`
+    }, {
+      text: "\u2192",
+      id: `${tm.id}-2`
+    }];
+
+    out.push(...termToWords(tm.forTm));
+    out.push({
+      text: "]",
+      id: `${tm.id}-3`,
+    });
+    if(rParens) {
+      out.push({
         text: "(",
         id: `${tm.id}-4`,
-      }] : [],
-      termToWords(tm.inTm),
-      rParens ? [{
+      });
+    }
+    out.push(...termToWords(tm.inTm));
+    if(rParens) {
+      out.push({
         text: ")",
         id: `${tm.id}-5`,
-      }] : [],
-    ].flat();
+      });
+    }
+    return out;
   }
   case "App": {
     const lParens = tm.t1.type === "Abs";
     const rParens = tm.t2.type === "App";
 
-    return [
-      lParens ? [{
+    const out = [];
+    if(lParens) {
+      out.push({
         text: "(",
         id: `${tm.id}-0`,
-      }] : [],
-      termToWords(tm.t1),
-      lParens ? [{
+      });
+    }
+    out.push(...termToWords(tm.t1));
+    if(lParens) {
+      out.push({
         text: ")",
         id: `${tm.id}-1`,
-      }] : [],
-      {
-        text: " ",
-        id: `${tm.id}-2`,
-      },
-      rParens ? [{
+      });
+    }
+    out.push({
+      text: " ",
+      id: `${tm.id}-2`,
+    });
+    if(rParens) {
+      out.push({
         text: "(",
         id: `${tm.id}-3`,
-      }] : [],
-      termToWords(tm.t2),
-      rParens ? [{
+      });
+    }
+    out.push(...termToWords(tm.t2));
+    if(rParens) {
+      out.push({
         text: ")",
         id: `${tm.id}-4`,
-      }] : [],
-    ].flat();
+      });
+    }
+    return out;
   }
   case "Var": return [{ text: tm.nm, id: `${tm.id}-0` }]
   }
@@ -818,7 +861,7 @@ function smallSteps(tm, n=100) {
   /** @type {Term[]} */
   let steps = [tm];
   for(let i = 0; i < n; ++i) {
-    const next = smallStep(steps.at(-1));
+    const next = smallStep(steps[steps.length-1]);
     if(next === null) break;
     steps.push(next);
   }
